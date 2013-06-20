@@ -1,0 +1,76 @@
+\documentclass[a4paper,11pt,numbers=noendperiod,bibliography=totocnumbered,listof=totocnumbered,abstracton]{scrreprt}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc} %windows latin1
+\usepackage[babel,german=quotes]{csquotes}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}% Schrift ist bei allen modernen TeX-Distributionen dabei und der Standard-T1-Schrift deutlich ¸berlegen 
+\usepackage{setspace}						% Paket um Absätze zu definieren
+\usepackage[left=4cm,right=2cm,top=2.5cm,bottom=2.5cm,includeheadfoot,headheight=1.3\baselineskip]{geometry}% Paket für Seitenlayout
+
+\usepackage{amsmath}						% AMS Pakete für neue Mathe-Umgebungen und -Zeichen
+\usepackage{amsfonts}
+\usepackage{amssymb}		% Paket f¸r Symbole. ‹bersicht: http://amath.colorado.edu/documentation/LaTeX/Symbols.pdf
+
+\usepackage{blindtext} % Beispieltext
+
+\usepackage{wrapfig} % Bild neben Text
+\usepackage{multicol} % Mehrspaltenmodus
+
+
+\renewcommand{\arraystretch}{1.5} % General space between rows (1 standard)
+\setlength{\tabcolsep}{5pt} % General space between cols (6pt standard)
+
+%% Tiefe des Inhaltsverzeichnisses
+\setcounter{tocdepth}{3}
+
+
+%%%%%%%%%%% Seitenzahlen rechts positionieren %%%%%%%%%%%%%%%%%%%
+\usepackage{scrpage2}
+\pagestyle{scrheadings}
+\clearscrheadings
+\clearscrplain
+\ofoot[\pagemark]{\pagemark}
+\cfoot{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%% Fuﬂnoten durchlaufend nummerieren %%%%%%%%%%%%%%%%%%%
+\usepackage{remreset}
+\makeatletter\@removefromreset{footnote}{chapter}\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%% Abk¸rzungsverzeichnis erstellen %%%%%%%%%%%%%%%%%%%%%
+\usepackage[german,intoc]{nomencl}
+% Befehl umbenennen in abk
+%\let\abk\nomenclature
+% Deutsche ‹berschrift
+\renewcommand{\nomname}{Abk¸rzungsverzeichnis}
+% Punkte zw. Abk¸rzung und Erkl‰rung
+\setlength{\nomlabelwidth}{.20\hsize}
+\renewcommand{\nomlabel}[1]{#1 \dotfill}
+% Zeilenabst‰nde verkleinern
+\setlength{\nomitemsep}{-\parsep}
+\makenomenclature
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{titleref} % um auf Titel (‹berschriften) zu referenzieren
+\usepackage{hyperref} % Links auf Inhaltsverzeichnis und Verweise verteilen...
+\usepackage{url} % f¸r \url{http://www}, Option hyp erlaubt auch Umbruch nach "-"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The following is needed in order to make the code compatible
+% with both latex/dvips and pdflatex.
+\ifx\pdftexversion\undefined
+\usepackage[dvips]{graphicx}
+\else
+\usepackage[pdftex]{graphicx}
+\DeclareGraphicsRule{*}{mps}{*}{}
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%TABELLEN
+\usepackage{booktabs}
+
+\onehalfspacing % Anderthalbzeilig
+\setlength{\parskip}{10pt plus 4pt minus 2pt}
+\parindent0pt
