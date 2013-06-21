@@ -629,5 +629,287 @@ Konzept der surjektiven und Konzept der vollen inkjektiven Homos ist abstrakt. D
 \paragraph{\coro 109 Surjektive / voll injektive Faktorisierung in \syssig}
 ($\mathcal{S}$, $\mathcal{FI}$) Faktorisierungssystem in \syssig wobei $\mathcal{S}$ die Klasse aller surjektiven und $\mathcal{FI}$ aller vollen injektiven Morphismen ist.
 
+\newpage
+
+
+\section{System Komposition}
+
+\subsubsection{Parallele Komposition \& Variante Systeme}
+
+
+\begin{multicols}{2}
+\columnseprule1pt
+
+\textbf{\underline{Parallele Komposition}} 
+
+\textbf{\defi 110 Parallele Komposition} \\
+Eine parallele Komposition $A\times B$  \\
+(i) $\forall \, s \in S:\,\left(A\times B\right)_{s}=A_{s}\times B_{s}$ \\
+(ii) $\forall \, f\in O_{w,v},\, x\in\left(A\times B\right)^{w}:$\\$f^{A\times B}(x)=(y_{A}\times_{v}y_{B})$\\ wenn $f^{A}(x_{A})=y_{A}\textrm{ \emph{und} }f^{B}(x_{B})=y_{B}$\\
+Notiz: Parallele Komposition zweier totaler Systeme ist total.
+
+\textbf{\prop 111 Eigenschaften paralleler Komposition} \\
+$A,B,C$ sind Systeme $\Rightarrow$ folgende parallele Kompositionen sind Isomorph \\
+(1) $A \times B \approx B \times A$ (Kommutiativ)\\
+(2) $A \times (B \times C) \approx (A \times B) \times C$ (Assoziativ) \\
+(3) $A \times \mathcal{I} \approx \mathcal{I}$ ($\mathcal{I}$ eine Art null-system)
+
+
+\textbf{\defi 112 Projektionen} \\
+$A \times B \Rightarrow$  die Projektionen \\ 
+$\left(p_{s}^{A}:\left(A\times B\right)_{s}\rightarrow A_{s}\right)_{s\in S}$
+und \\ $\left(p_{s}^{B}:\left(A\times B\right)_{s}\rightarrow B_{s}\right)_{s\in S}$
+sind def. durch: Für $x\in\left(A\times B\right)_{s}$: \\(1)
+$p_{s}^{A}(x)=x_{A}$ und \\(2) $p_{s}^{B}(x)=x_{B}$
+
+\textbf{\prop 113 Projektionen} \\
+Die Projektionen $p^A$ und $p^B$ sind Homoms.
+
+\textbf{\prop 114 Eindeutige Homomorphismen in parall. Kompositionen} \\
+$h,k: C \rightarrow (A \times B)$ \homos mit \\
+(1) $p_A \circ h \, = \, p_A \circ k$ und 
+(2) $p_B \circ h \, = \, p_B \circ k$\\$ \Rightarrow h = k$
+
+\columnbreak
+\textbf{\underline{Variante Systeme}} 
+
+
+\textbf{\defi 115 Variante Systeme} \\
+Eine variantes System $A  + B$  \\
+(i) $\forall \, s \in S:\,\left(A + B\right)_{s}= \left(A_{s}\uplus B_{s}\right)_{|\equiv^{\mathcal{I}}}$ \\
+(ii) $\forall \, f\in O_{w,v},\, [x] \in\left(A + B\right)^{w}:$\\$f^{A + B}[x]= \begin{cases}
+\left[y_{A}\right] & \textrm{wenn \ensuremath{x\in A^{w}\textrm{ \emph{und} }}}f^{A}(x)=y_{A}\\
+\left[y_{B}\right] & \textrm{wenn \ensuremath{x\in B^{w}\textrm{ \emph{und} }}}f^{B}(x)=y_{B}
+\end{cases}$
+Notiz: Variantes System zweier totaler Systeme muss nicht total sein.
+
+
+\textbf{\prop 116 Eigenschaften varianter Systeme} \\
+$A,B,C$ sind Systeme $\Rightarrow$ folgende variante Systeme sind Isomorph \\
+(1) $A + B \approx B + A$ (Kommutiativ)\\
+(2) $A + (B + C) \approx (A + B) + C$ (Assoziativ) \\
+(3) $A + \mathcal{I} \approx A$ ($\mathcal{I}$ eine Art neutrales System)
+
+
+\textbf{\defi 117 Einbettungen} \\
+$A + B \Rightarrow$  die Einbettungen \\ 
+$\left(i_{s}^{A}:A_{s}\rightarrow\left(A+B\right)_{s}\right)_{s\in S}$
+und \\ $\left(i_{s}^{B}:B_{s}\rightarrow\left(A+B\right)_{s}\right)_{s\in S}$
+sind def. durch: \\ \\ (1) Für $x\in A_{s}$: $i_{s}^{A}(x)=[x]$ und \\ (2) Für $x\in B_{s}$: $i_{s}^{B}(x)=[x]$.
+
+\textbf{\prop 118 Einbettungen} \\
+Die Einbettungen $i^A$ und $i^B$ sind Homoms.
+
+\textbf{\coro 119 Injektive Einbettungen} \\
+Signatur ohne Konstanten $\Rightarrow$ Einbettungen: injektiv und geschlossen.
+
+\textbf{\prop 120 Eindeutige Homomorphismen aus varianten Systemen} \\
+$h,k: (A+B) \rightarrow C$ \homos mit \\
+(1) $h \circ i_A \, = \, k \circ i_A$ und 
+(2) $h \circ i_B \, = \, k \circ i_B$\\$ \Rightarrow h = k$
+\end{multicols}
+
+\section{Produkte \& Co-Produkte}
+
+\begin{multicols}{2}
+\columnseprule1pt
+
+\textbf{\underline{Produkte}} 
+
+\textbf{\defi 121 Produkt} \\
+$\mathcal{A}=\left(a_{i}\right)_{i\in I}$, 
+$\Pi\mathcal{A}=\left(\Pi\mathcal{A},\left(p_{i}:\Pi\mathcal{A}\rightarrow a_{i}\right)_{i\in I}\right)$: \\
+$\forall$ Objekte $c$ und ($x_i : c \rightarrow a_i$) gibt es eindeutig $u: c \rightarrow \Pi \mathcal{A}$
+so dass $p_i \circ u = x_i$. \\ $u$ auch genannt $\left\langle x_{i}\right\rangle _{i\in I}$.\\ Das Produkt ist endlich wenn $I$ endlich. 
+Siehe Abbildung \ref{fig:121}
+
+\textbf{\prop 122 Produkt ist abstrakt} \\
+(1) $\Pi_1 \mathcal{A}$ und $ \Pi_2 \mathcal{A} \Rightarrow \, \, \, \approx: \Pi_1\mathcal{A} \rightarrow \Pi_2\mathcal{A}$, \\ so dass ($p^2_i \circ \approx = p^1_i)_{i\in I}$ \\
+(2) $\Pi \mathcal{A}$ und $ \approx : q \rightarrow \Pi \mathcal{A} \, \Rightarrow$\\$ (q, (p_i \circ \approx : q \rightarrow a_i)_{i \in I})$ ist Produkt von $\mathcal{A}$ 
+
+
+\columnbreak
+
+\textbf{\underline{Co-Produkte}} 
+
+\textbf{\defi 137 Co-Produkt} \\
+$\mathcal{A}=\left(a_{i}\right)_{i\in I}$, 
+$\sum\mathcal{A}=\left(\sum\mathcal{A}, \left(in_{i}:a_i \rightarrow \sum\mathcal{A} \right)_{i\in I}\right)$: \\
+$\forall$ Objekte $c$ und ($x_i : a_i \rightarrow c$) gibt es eindeutig $u: \sum \mathcal{A} \rightarrow c$
+so dass $u \circ in_i = x_i$. \\ $u$ auch genannt $\{ x_{i} \} _{i\in I}$.\\ Das Co-Produkt ist endlich wenn $I$ endlich. 
+Siehe Abbildung \ref{fig:137}.
+
+\textbf{\prop 138 Abstr Co-Produkt} \\
+(1) $\sum_1 \mathcal{A} $ und $ \sum_2 \mathcal{A} \Rightarrow \, \, \, \approx: \sum_1\mathcal{A} \rightarrow \sum_2\mathcal{A}$, \\ so dass ($\approx \circ in^1_i = in^2_i)_{i\in I}$ \\
+(2) $\sum \mathcal{A} $ und $ \approx : \sum \mathcal{A} \rightarrow q \, \Rightarrow$\\$ (q, ( \approx \circ in_i : a_i \rightarrow q)_{i \in I})$ is Co-Produkt v. $\mathcal{A}$ 
+
+
+\end{multicols}
+
+\begin{figure}[h]
+\centering
+\subfigure[Produkt\label{fig:121}]{\includegraphics[width=0.21\textwidth]{Abbildungen/121}} \qquad \qquad \qquad
+\subfigure[Co-Produkt\label{fig:137}]{\includegraphics[width=0.18\textwidth]{Abbildungen/137}}
+\caption{Definitionen}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfigure[Produkt\label{fig:122}]{\includegraphics[width=0.29\textwidth]{Abbildungen/122}} \qquad\qquad\qquad
+\subfigure[Co-Produkt\label{fig:138}]{\includegraphics[width=0.24\textwidth]{Abbildungen/138}}
+\caption{Abstrakte}
+\end{figure}
+
+\newpage 
+
+\begin{multicols}{2}
+\columnseprule1pt
+
+\textbf{\underline{Produkte}} 
+
+\textbf{\prop 123 Assoziativität und Kommutativität} \\
+$\mathcal{A} = (a_i)_{i \in I}$ $\mathcal{J}$ ist Partition auf $I \Rightarrow$ $\Pi \mathcal{A} \approx \Pi(\Pi(a_i)_{i \in S})_{s \in \mathcal{J}}$ wenn alle teilnehmenden Produkte exististeren.
+
+
+\textbf{\defi 125 Finales Objekt} \\
+Ein Objekt $\mathcal{T}$ ist final in Kategorie $\mathcal{C}$, wenn es einen eindeutigen Morphismus von jedem anderen $\mathcal{C}$-Objekt in $\mathcal{T}$ gibt.
+
+\textbf{\coro 126 Leeres Produkt} \\
+Das finale Objekt einer Kategorie deckt sich mit dem leeren Produkt, d.h. $\mathcal{T} = \Pi \emptyset$
+
+\textbf{\prop 127 Neutrales Element für Produktoperator} \\
+Für alle Objekte $a: a \times \mathcal{T} \approx a$
+
+\textbf{\defi 128 Produktmorphismus} \\
+Geg. Fam. von Morphismen $\left(m_{i}:d_{i}\rightarrow c_{i}\right)_{i\in I}$ einer Kategorie $\mathcal{C}$ mit den Produkten \\ $D=\Pi(d_{i})_{i\in I}$
+und $C=\Pi(c_{i})_{i\in I}$. \\ Der Produktmorphismus $\Pi(m_{i})_{i\in I}:D\rightarrow C$
+ist der eindeutige Morphismus für die Familie von Morphismen
+$\left(m_{i}\circ p_{i}:D\rightarrow c_{i}\right)_{i\in I}$,
+d.h. $\Pi(m_{i})_{i\in I}=\left\langle m_{i}\circ p_{i}\right\rangle _{i\in I}$
+
+\columnbreak
+
+\textbf{\underline{Co-Produkte}} 
+
+\textbf{\prop 139 Assoziativität und Kommutativität} \\
+$\mathcal{A} = (a_i)_{i \in I}$ $\mathcal{J}$ ist Partition auf $I \Rightarrow$ \\ $\sum \mathcal{A} \approx \sum(\sum(a_i)_{i \in S})_{s \in \mathcal{J}}$ wenn alle teilnehmenden Co-Produkte exististeren.
+
+
+\textbf{\defi 141 Initiales Objekt} \\
+Ein Objekt $\mathcal{I}$ ist initial in Kategorie $\mathcal{C}$, wenn es einen eindeutigen Morphismus in jedes andere $\mathcal{C}$-Objekt von $\mathcal{I}$ gibt.
+
+\textbf{\coro 142 Leeres Co-Produkt} \\
+Das initiale Objekt einer Kategorie deckt sich mit leerem Co-Produkt, d.h. $\mathcal{I} = \sum \emptyset$
+
+\textbf{\prop 143 Neutrales Element für Co-Produktoperator} \\
+Für alle Objekte $a: a + \mathcal{I} \approx a$
+
+\textbf{\defi 144 Co-Produkt Morphism.} \\
+Geg. Fam. von Morphismen $\left(m_{i}:d_{i}\rightarrow c_{i}\right)_{i\in I}$ einer Kategorie $\mathcal{C}$ mit den Co-Produkten \\ $D=\sum(d_{i})_{i\in I}$
+und $C=\sum(c_{i})_{i\in I}$. \\ Der Co-Produktmorph. $\sum(m_{i})_{i\in I}:D\rightarrow C$
+ist der eindeutige Morphismus für die Familie von Morphismen
+$\left(in_{i}\circ m_{i}:d_i \rightarrow C\right)_{i\in I}$,
+d.h. $\sum(m_{i})_{i\in I}=\left \{in_{i}\circ m_{i}\right\} _{i\in I}$ 
+
+
+
+
+\end{multicols}
+TODO BILD LÖWE FRAGEN
+\newpage 
+
+\begin{multicols}{2}
+\columnseprule1pt
+
+\textbf{\underline{Produkte}} 
+
+\textbf{\prop 129 Produkt monischer Morphismen} \\
+$(m_i: d_i \rightarrow c_i)_{i \in I}$ mono $\Rightarrow \Pi(m_i)_{i\in I}: \Pi(d_i)_{i \in I} \rightarrow \Pi(c_i)_{i \in I}$ ist auch monisch.
+
+\textbf{\prop 130 Produkt extremaler Morphismen} \\
+In einer Kategorie $C$ mit Faktorisierungssystem in Epis und extremale Monos ist Produkt der extremalen Monos wieder extremal mono.
+
+\textbf{\defi 131 Kartesisches Produkt} \\
+Objekte $(a_i)_{i \in I}$ in Set. Das Produkt $\left(\Pi(a_{i})_{i\in I},\left(p_{i}:\Pi(a_{i})_{i\in I}\rightarrow a_{i}\right)_{i\in I}\right)$ ist definiert durch \\
+(1) $\Pi(a_{i})_{i\in I}=\{c:I\rightarrow\bigcup_{i\in I}a_{i}\,::$\\$ \,\forall i\in I:\, c(i)\in a_{i}\}$ \\
+(2) $\forall \, i\in I$ and $c\in\Pi(a_{i})_{i\in I}$: $p_{i}(c)=c(i)$
+
+\textbf{\prop 132 Kartesisches Produkt} \\
+Das Kartesische Produkt ist das Produkt in der Kategorie Set.
+
+
+\textbf{\coro 133 Finales Objekt in Set} \\
+Das finale Objekt in Set ist $\{*\}$.
+
+\textbf{\defi 134 Generelle Produkte in \syssig} \\
+Sei $\mathcal{A}=\left(A_{i}\right)_{i\in I}$ eine Familie algebraischer
+Systeme, dann ist das Produkt $\Pi\mathcal{A}=\left(\Pi\mathcal{A},\left(p_{i}:\Pi\mathcal{A}\rightarrow A_{i}\right)_{i\in I}\right)$
+definiert durch \\
+(1) Produkt über alle Trägermengen \\
+(2) Operationen auf Produkten ausführen die für Faktoren ausgelegt sind.\\
+(3) \syssig Projektionen $p_{i,s}$ stimmen überein mit $p^{Set}_{i,s}$ 
+
+
+\columnbreak
+
+\textbf{\underline{Co-Produkte}} 
+
+\textbf{\prop 145 Co-Produkt epischer Morphismen} \\
+$(m_i: d_i \rightarrow c_i)_{i \in I}$ epi $\Rightarrow \sum(m_i)_{i\in I}: \sum(d_i)_{i \in I} \rightarrow \sum(c_i)_{i \in I}$ ist auch episch.
+
+\textbf{\prop 146 Co-Produkt extremaler Epis} \\
+In einer Kategorie $C$ mit Faktorisierungssystem in extremal Epis und Monos ist Co-Produkt der extremalen Epis wieder extremal epi.
+
+\textbf{\defi 147 Co-Produkt in Set} \\
+Objekte $(a_i)_{i \in I}$ in Set. Das Co-Produkt $\left(\sum(a_{i})_{i\in I},\left(in_{i}:a_{i} \rightarrow \sum (a_{i})_{i\in I}\right)_{i\in I}\right)$ ist definiert durch \\
+(1) $\sum(a_{i})_{i\in I}=\biguplus_{i \in I} a_i$\\
+(2) $\forall \, i\in I$ und $x\in a_{i} $: \\ $in_i: a_i \rightarrow \sum(a_i)_{i \in I} :: = in_i(x) = (x,i)$
+
+\textbf{\prop 148 Co-Produkt in Set} \\
+Das Co-Produkt ist das Co-Produkt in der Kategorie Set.
+
+
+\textbf{\coro 149 Initiales Objekt in Set} \\
+Das initiale Objekt in Set ist $\emptyset$.
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\textbf{\coro 150 Initiales Objekt in \syssig} \\
+Das leere algebraische System $\mathcal{I}$ ist das initiale Objekt in \syssig
+
+
+
+\end{multicols}
+
+
+
+\begin{multicols}{2}
+\columnseprule1pt
+
+\textbf{\underline{Produkte}} 
+
+\textbf{\prop 135 Generelle Produkte in \syssig} \\
+Das algebraische System $\Pi \mathcal{A}$ mit \\ $(p_i: \Pi \mathcal{A} \rightarrow A_i)_{i \in I}$ (aus Def 134) ist Produkt der Familie von Systemen $\mathcal{A} = (A_i)_{i \in I}$
+
+
+\textbf{\coro 136 Finales Objekt in \syssig} \\
+Das finale Objekt $T$ in \syssig ist das folgende algebraische System \\
+(1) $(T_s = \{*\})_{s \in S}$ \\
+(2) $\forall \, f \in O_{w,v} \forall \, x \in T^w: f^T(x)=*$
+
+\columnbreak
+
+\textbf{\underline{Co-Produkte}} 
+
+\textbf{\prop 151 Binäres Co-Produkt in \syssig} \\
+Das variante System $A + B$ ist das Co-Produkt der zwei Systeme $A$ und $B$.
+
+\end{multicols}
+
 
 \end{document}
