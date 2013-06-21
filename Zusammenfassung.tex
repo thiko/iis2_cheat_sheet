@@ -27,6 +27,8 @@
 \pagenumbering{arabic}
 \setcounter{page}{1} 
 
+
+
 \chapter{Zusammenfassung}
 
 
@@ -454,7 +456,6 @@ Hom. in $Sys(\Sigma)$ ist episch $\Leftrightarrow$  das kleinste, geschlossene S
 
 \end{multicols}
 
-
 \subsection{Spezielle Mono- und Epimorphismen}
 
 \begin{multicols}{2}{}
@@ -501,7 +502,7 @@ $e \circ f$ extremal Epi $\Rightarrow e$ extremal Epi.
 $m: a \rightarrow b$ ist extremaler Mono, $a' \approx a$, $b \approx b'$ $\Rightarrow \approx \circ \, m \, \circ \approx$ ist extremaler Mono. 
 \\
 \\
-Notiz: Jeder Mono ist $Set$ ist extremal.
+Notiz: Jeder Mono in $Set$ ist extremal.
 \\
 \\
 \\
@@ -524,8 +525,109 @@ Notiz: Jeder Epi ist $Set$ ist extremal. Extremale Epis sind ein geeignetes Mode
 Hom. in $Sys(\Sigma)$ ist extremaler Epi  $\Leftrightarrow$  er surjektiv und voll.
 \end{multicols}
 
-\section{Faktorisierungssysteme}
 
+\subsection{Faktorisierungssysteme}
+
+\subsubsection{Faktorisierungssysteme}
+
+\paragraph{\defi 95 Faktorisierungssystem}
+$\mathcal{E}$ und $\mathcal{M}$ sind Klassen von Morphismen in $C$.
+$(\mathcal{E}$ und $\mathcal{M})$ ist ein Faktorisierungssystem, wenn
+\begin{enumerate}
+\item Jeder Morphismus $p$ lässt sich in $p = m \circ e$ zerlegen.
+\item $\mathcal{E}$ und $\mathcal{M}$ sind geschlossen unter Komposition mit Isomorphie
+\item Wenn $m \circ p \, = \, q \circ e$, dann gibt es einen eindeutigen Morphismus $d$ (Diagonale), so dass $m \circ d = q$ und $d \circ e = p$ (siehe \ref{fig:diagonale}).
+\end{enumerate}
+
+\begin{figure}[h]
+\label{fig:diagonale}
+\noindent \centering{}\includegraphics[scale=0.5]{Abbildungen/Diagonal}\caption{Diagonale}
+\end{figure}
+
+\paragraph{\prop 96 Eindeutige Faktorisierung}
+Faktorisierungen sind eindeutig bis auf Isomorphie:
+
+\begin{enumerate}
+\item $(e_{1}:a\rightarrow c_{1},m_{1}:c_{1}\rightarrow b), \\ (e_{2}:a\rightarrow c_{2},m_{2}:c_{2}\rightarrow b)$ sind zwei Faktorisierungen für den selben Morphismus \\ $p:a\rightarrow b$,
+\, \, d.h. $m_{1}\circ e_{1}=p=m_{2}\circ e_{2}$ \\
+$\Rightarrow$ es gibt Iso $i:c_{1}\rightarrow c_{2}$ mit $i\circ e_{1}=e_{2}$
+und $m_{2}\circ i=m_{1}$.
+\item $(e:a\rightarrow c,m:c\rightarrow b)$
+ist Faktorisierung für $p:a\rightarrow b$ und $i:c\rightarrow d$
+ist ein Isomorphismus $\Rightarrow $ $(i\circ e:a\rightarrow d,m\circ i{}^{-1}:d\rightarrow b)$
+ist auch Faktorisierung für $p:a\rightarrow b$
+\end{enumerate}
+
+\begin{figure}[h]
+\label{fig:eindeutig_diagonale}
+\noindent \centering{}\includegraphics[scale=0.1]{Abbildungen/eindeutig_diagonale}\caption{Eindeutige Diagonale}
+\end{figure}
+
+\paragraph{\prop 96 Komposition}
+Wenn $(\mathcal{E},\mathcal{M})$ ein Faktorisierungssystem ist, dann sind die Klassen $\mathcal{E}$ und $\mathcal{M}$ geschlossen unter Komposition.
+
+\paragraph{\prop 97 Epi-/Mono-Faktorisierung in Set}
+In Set:  $\mathcal{E}$  \epis und $\mathcal{M}$ \monos
+
+\subsubsection{Homomorphismus Theoreme}
+
+
+\begin{multicols}{2}
+\columnseprule1pt
+
+\textbf{\underline{Theorem 1}} 
+
+\textbf{Theorem 99 Homom Theorem 1} \\
+$h: A \rightarrow B$ surjektiv und voller Hom. und $k: A \rightarrow C$ ist Hom. so dass $h^\equiv \subseteq k^\equiv$, d.h.
+der Kern von $k$ beinhaltet den Kern von $h$ \\ $\Rightarrow$ es gibt einen eindeutigen Homom. \\ $k^*: B \rightarrow C$ so dass $k^* \circ h = k$. \\
+$\equiv^h \, \, \, = \, \, \,\equiv^k \, \,\Rightarrow k^*$ ist injektiv.
+
+
+\columnbreak
+\textbf{\underline{Theorem 2}} 
+
+\textbf{Theorem 103 Homom Theorem 2} \\
+$h: A \rightarrow B$ injektiver Homom. und \\ $k: C \rightarrow B$ ist Hom. so dass $k(C) \subseteq h(A)$ \\ \\ $\Rightarrow$ es  gibt einen eindeutigen Homom. \\ $k^*: C \rightarrow A$ mit $h\circ k^* = k$ \\
+$\left\lceil k(C)\right\rceil ^{c}=h(A)$, then $k^{*} \Rightarrow$ $k^*$ ist epi.
+
+\end{multicols}
+
+\newpage 
+
+\begin{multicols}{2}
+\columnseprule1pt
+
+\textbf{\underline{Theorem 1}} \\
+
+\textbf{\lem 100 Invarianter Kern} \\
+$m$ injektiver Homom. $\Rightarrow \, \, \equiv^{m \circ h} \, \, = \, \, \equiv^h$ für alle Hom, die mit $m$ komponiert werden können.
+
+\textbf{\coro 101 Extremal epische Faktorisierungen in \syssig} \\
+$(\mathcal{E}^{x}, \mathcal{M})$ ist ein Faktorisierungssystem wobei $\mathcal{E}^{x}$ extremaler Epi und $\mathcal{M}$ \mono
+
+\textbf{\coro 102 Komposition extremaler Epis} \\
+$e_1 : A \rightarrow B$, $e_2 : B \rightarrow C$ sind zwei extremale Epis in \syssig $\Rightarrow \, e_2 \circ e_1$ ist extremaler Epi.
+
+\columnbreak
+\textbf{\underline{Theorem 2}}
+
+\textbf{\lem 104 Invariante Sub-Trägermengen} \\
+$e: A \rightarrow B$ epi $\Rightarrow \left\lceil h(B) \right\rceil ^{c} = \left\lceil h\circ e(A)\right\rceil ^{c}$ für alle \homos $h: A \rightarrow C$.
+
+\textbf{\coro 105 Extremal mono Faktorisierungen in \syssig} \\
+$(\mathcal{E}, \mathcal{M}^{x})$ ist ein Faktorisierungssystem wobei $\mathcal{E}$ Epi und $\mathcal{M}^{x}$ extremaler \mono
+
+\textbf{\coro 106 Komposition extremaler Monos} \\
+$m_1 : A \rightarrow B$, $m_2 : B \rightarrow C$ sind zwei extr. Monos in \syssig $\Rightarrow \, m_2 \circ m_1$ ist extr. Mono.
+\end{multicols}
+
+\subsubsection{Surjektive / volle injektive Homomorphismen}
+
+\paragraph{\prop 107 Surjektive und volle injektive Homos}
+Konzept der surjektiven und Konzept der vollen inkjektiven Homos ist abstrakt. D.h. Homo $h:A \rightarrow B$ surjektiv/voll und injektiv und $A \approx A'$ und $B \approx B'$ $\Rightarrow \approx \, \, \circ \, \, m \, \, \circ \approx$ ist surjektiv/voll und injektiv.
+
+\paragraph{\coro 109 Surjektive / voll injektive Faktorisierung in \syssig}
+($\mathcal{S}$, $\mathcal{FI}$) Faktorisierungssystem in \syssig wobei $\mathcal{S}$ die Klasse aller surjektiven und $\mathcal{FI}$ aller vollen injektiven Morphismen ist.
 
 
 \end{document}
