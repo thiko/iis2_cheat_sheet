@@ -105,8 +105,12 @@ Der Schnitt $\bigcap\mathfrak{B}$ ist definiert als
 \begin{enumerate}
 \item $\bigcap\mathfrak{B}$ ist ein algebraisches System. D.h. die Operationen sind wohldefiniert.
 \item Der Schnitt ist selber Subsystem von A ($\bigcap\mathfrak{B} \subseteq A$)
+\begin{enumerate}
+\item \emph{Notiz CT:} Der Schnitt über volle Untersysteme ist wieder voll
+\item \emph{Notiz CT:} Der Schnitt über geschlossene Untersysteme ist wieder geschlossen
+\end{enumerate}
 \item Der Schnitt ist Untersystem jedes $B^i$
-\item MAIL AN LÖWE: Für alle Untersysteme $X$ von $B^i$ gilt, dass sie Untersystem von $\bigcap\mathfrak{B}$ sind.
+\item Für alle Subsysteme $X$ von $B^i$ gilt, dass sie Untersystem von $\bigcap\mathfrak{B}$ sind.
 \end{enumerate}
 
 \paragraph{Definition 20 Vereinigung}
@@ -179,7 +183,9 @@ $k\circ h(A)\subseteq k(B)$
 \paragraph{Definition 33 Volle und geschlossene Homomorphismen}
 $h:A\rightarrow B$ ist voll bzw. geschlossen wenn das Bild $(h(A))$ ein volles bzw. geschlossenes Untersystem der Co-Domain $B$ ist: $h(A) \subseteq^x B$ \, $x \in \{f,c\}$
 
-\paragraph{Definition 35 Konstruktion von Abschlüssen OFFEN}
+Jeder volle Homomorphismus von einem totalen System $A$ in ein System $B$ ist geschlossen.
+
+\paragraph{Definition 35 Konstruktion von Abschlüssen}
 Sei $A$
 System und $\left(B_{s}\subseteq A_{s}\right)_{s\in S}$ Familie von Teilmengen auf den Trägermengen. 
 Die Operatoren sind dazu da, um ein Untersystem geschlossen/voll zu machen.
@@ -452,7 +458,7 @@ Hom. in $Set$ ist episch $\Leftrightarrow$ er surjektiv ist.
 Jeder surjektive Homomorphismus in $Sys(\Sigma)$ ist episch.
 
 \textbf{Proposition 82 (Epi in $Sys(\Sigma))$)} \\
-Hom. in $Sys(\Sigma)$ ist episch $\Leftrightarrow$  das kleinste, geschlossene Subsystem von $B$ induziert durch das Bild von $h$ übereinstimmt mit $B$, das heißt: $\left\lceil h(A)\right\rceil ^{C}=B$ .
+Hom. in $Sys(\Sigma)$ ist episch $\Leftrightarrow$  das kleinste, geschlossene Subsystem von $B$ induziert durch das Bild von $h$ übereinstimmt mit $B$, das heißt: $\underbrace{\left\lceil h(A)\right\rceil ^{C}}_{Def. 35} =B$ .
 
 \end{multicols}
 
@@ -815,7 +821,14 @@ d.h. $\sum(m_{i})_{i\in I}=\left \{in_{i}\circ m_{i}\right\} _{i\in I}$
 
 
 \end{multicols}
-TODO BILD LÖWE FRAGEN
+
+\begin{figure}[h]
+\centering
+\subfigure[Produkt\label{fig:128}]{\includegraphics[width=0.41\textwidth]{Abbildungen/128}} \qquad\qquad\qquad
+\subfigure[Co-Produkt\label{fig:144}]{\includegraphics[width=0.41\textwidth]{Abbildungen/144}}
+\caption{- Morphismus}
+\end{figure}
+
 \newpage 
 
 \begin{multicols}{2}
