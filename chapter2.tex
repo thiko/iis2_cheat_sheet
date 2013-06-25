@@ -297,3 +297,124 @@ $e: B \twoheadrightarrow C$ ist epi $\implies \mathbf{A}_{F(e)} \approx C$ und $
 
 
 
+\section{Varietät}
+
+\subsection{Atomare Axiome}
+
+\paragraph{\defi 238 Atomares Axiom und Lösung}
+Gegeben: $\Sigma = (S,O)$, atomares Axiom $a = (X, f)$ besteht aus einer endlichen Variablenmenge $X$ und einer Formel $f \in F^{\Sigma, X}$. \\
+Eine Variablenzuweisung $h: X \rightarrow B$ in ein $\Sigma$-System B löst das Axiom $A = (X, f)$, wenn es einen \homo $h^*: \mathbf{A}_a \rightarrow B$ gibt, so dass $h^* \circ x^a = h$. \\
+Wenn $h$ eine Lösung ist, schreiben wir $h \models a$
+
+\paragraph{\prop 239 Homomorphismus und Lösung}
+
+$h: X \nach B$ ist Lösung von atomarem Axiom $a = (X,f)$ in $B$ und $k: B \rightarrow C$ ist ein \homo $\implies k \circ h$ löst $a$ in $C$, d.h. $k \circ h \models a$.
+
+
+\paragraph{\defi 240 Gültigkeit atomarer Axiome}
+
+$a= (X,f) $ ist gültig in einem algebraischen System $B$ ($B \models a$), wenn jede Variablenzuweisung $h: X \nach B$ $a$ löst, d.h. \\
+$B \models a$ wenn $\forall \, h: X \nach B :: h \models a$.
+
+\paragraph{\prop 241 Gültigkeit ist abstrakt}
+Wenn $a$ atomares Axiom ist, $B \models a$, und $B \approx B' \implies B' \models a$.  
+
+\paragraph{\defi 242 Gefülltes algebraisches System}
+Ein  algebraisches System $B$ ist gefüllt, wenn jede Trägermenge von $B$ nicht leer ist (d.h. 
+$B_s \neq \emptyset$ für alle $s \in S$) \\ $S' \subseteq S \implies$ $B$ ist '$S'$-gefüllt', wenn $B_{s} \neq \emptyset \,$ für alle $s \in S'$.  
+
+\paragraph{\prop 244 Gültigkeit in Produkten}
+$a$ atomres Axiom, $I$ indizierte Menge. \\$(B_i \models a)_{i \in I} \implies \Pi(B_i)_{i \in I} \models a$
+
+
+\paragraph{\prop 245 Gültigkeit in extremalen Subsystem}
+$a$ atomares Axiom, $i: C \rightarrowtail B$ extremaler Mono, $B \models a \implies C \models a$
+
+\paragraph{\defi 246: Homomorphe Bilder }
+Algebraisches System $C$ ist homomorphes Bild eines Systems $B$, wenn es einen subjektiven Homomorphismus $q: B \twoheadrightarrow C$ gibt.
+
+\emph{(Notiz: Homomorphes Bild ist Spezialfall von Epi (Vgl. Prop 80) (Bedenke: Wenn surjektiv, dann Epi. Umgekehrt nicht)) }
+
+
+\paragraph{\prop 247: Gültigkeit in homomorphen Bildern}
+$B \models a$, $C$ homomorphes Bild von $B$, d.h. Es gibt einen surjektiven \homo $q: B \twoheadrightarrow C \implies C \models a$
+
+\paragraph{\coro 248: Gültigkeit in Produktkomponenten}
+$a = (X,f)$ atomares Axiom und $S_X \subseteq S$ (Teilmenge der Sorten für welche $a$ Variablen hat), d.h. $s \in S_X \Leftrightarrow X_s \neq \emptyset$.
+$\Pi (B_i)_{i \in I} \models a$ und $(B_{i,s} \neq \emptyset)_{i \in I, s \in S_X}$ ('$S_X$' gefüllt) \\
+$\implies  B_i \models a \, \, \forall \,  i \in I $ (jede Komponente des Produktes erfüllt das Axiom).
+
+\paragraph{\lem 249: Variablenzuweisung in approximierte Systeme}
+(ausgelassen)
+
+\paragraph{\prop 250: Gültigkeit in approximierte Systemen}
+(ausgelassen)
+
+
+\subsection{Atomare Spezifikationen}
+
+\paragraph{\defi 251: Atomare Spezifikation, Varietäten} 
+Atomare Spezifikation \\ $ASpec = (\Sigma, \Phi)$ besteht aus einer Signatur $\Sigma$ und einer Menge von atomaren Axiomen $\Phi$ wrt. $\Sigma$.
+$B \in Sys(\Sigma) $ erfüllt die Spezifikation (geschrieben: $B \models ASpec$), wenn $B \models a$ für alle $a \in \Phi$. \\
+Die volle Subkategorie von \syssig, welches alle Systeme beinhaltet, die die Spezifikation $ASpec = (\Sigma, \Phi)$ erfüllen, wird bezeichnet als Sys($ASpec$) oder Sys$(\Phi)$. \\
+Eine volle Subkategorie $\mathbb{K}$ aller $\Sigma$-Systeme wird eine Varietät genannt, wenn es eine atomare Spezifikation ($\Sigma, \Phi$) gibt, so dass $\mathbb{K} = Sys(\Phi)$
+
+
+\paragraph{\prop 252: Varietäten sind abstrakt} 
+Jede Varietät ist isomorph-geschlossen. Siehe Defi 253.
+
+\paragraph{\defi 253: Bündel atomarer Axiome, Lösungen} 
+Ein Bündel $\mathcal{B}$ atomarer Axiome mit den selben Variablenmengen $X$ ist eine syntaktische Präsentation $\mathcal{B} = (X, F \subseteq F^{\Sigma, X})$.
+$C$ erfüllt ein Bündel (geschrieben: $C \models \mathcal{B}$), wenn jede Variablenzuweisung $h: X \nach C$ erweitert werden kann auf einen \homo $h^*: \mathbf{A}_\mathcal{B} \nach C$, so dass $h^* \circ^\mathcal{B} = h$
+
+
+\paragraph{\lem 254: Bündel definieren Co-Limiten} 
+(ausgelassen)
+
+\paragraph{\prop 255: Bündel atomarer Axiome} 
+
+$(a_i)_{i \in I}$ ist Familie atomarer Axiome mit den selben Variablenmengen $X$, d.h. $a_i = (X, f_i)$ für alle $i \in I$ \\ 
+$\implies C $ erfüllt alle Axiome $((C \models a_i )_{i \in I})$ $\Leftrightarrow$ $C$ erfüllt das Bündel $\mathcal{B} = (X, \{f_i:: i \in I \})$, d.h. $C \models \mathcal{B}$ 
+
+\paragraph{\lem 256: Co-well-powered Basis} 
+\syssig its co-well-powered.
+
+
+\paragraph{\coro 257: Varietäten sind episch-reflektive Subkategorien}
+Jede Varietät $\mathbb{K} \subseteq Sys(\Sigma)$ ist episch-reflektive Subkategorie von \syssig.
+
+\paragraph{Theorem 258: Birkhoffs Charakterisierung}
+Eine volle Unterkategorie $\mathbb{K}$ von \syssig ist eine Varietät $\Leftrightarrow $ $\mathbb{K}$ ist geschlossen bis auf Produkte, extremale Subobjekte, homomorphe Bilder und approximierte Systeme. 
+ 
+ 
+\newpage  
+\subsection{Spezifikationsproblem und einfache Lösung}
+
+\paragraph{\defi 259: Spezifikationsproblem, einfache Lösung}
+Ein Spezifikationsproblem ist gegeben durch eine Signatur $\Sigma$ und entweder 
+\begin{enumerate}
+\item Ein $\Sigma$-System K oder
+\item Eine volle und isomorph-geschlossene Subkategorie $\mathbb{K} \subseteq Sys(\Sigma)$ 
+\end{enumerate}
+Eine einfache Lösung für das Spezifikationsproblem ist eine atomare Spezifikation $ASpec = (\Sigma, \Phi)$, so dass 
+\begin{enumerate}
+\item $K$ ist initial in $Sys(ASpec)$ oder
+\item $Sys(ASpec) = \mathbb{K}$
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
