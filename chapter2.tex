@@ -1,0 +1,299 @@
+% !TEX root = Zusammenfassung.tex
+\chapter{Spezifikation}
+
+\section{Abstraktion: Episch reflektive Subkategorien}
+
+\paragraph{\defi 152: Subkategorie}
+Kategorie $\mathcal{D}$ ist Subkategorie von $\mathcal{C}$ ($\mathcal{D} \subseteq \mathcal{C}$), wenn
+\begin{enumerate}
+\item $O^\mathcal{D} \subseteq O^\mathcal{C}$ (Objekte in Teilmengenbeziehung)
+\item $\forall \, a,b \in O^\mathcal{D}:  M^\mathcal{D}_{a,b} \subseteq M^\mathcal{C}_{a,b} $
+\item $\forall \, a \in O^\mathcal{D}: id^\mathcal{D}_a = id^\mathcal{C}_a$
+\item $\forall \, a,b,c, \in O^\mathcal{D} \wedge m,n \in O^\mathcal{D}_{a,b}: n \circ^{\mathcal{D}_{a,b,c}} m  = n \circ^{\mathcal{C}_{a,b,c}} m  $
+\end{enumerate}
+
+\begin{itemize}
+\item $\mathcal{D}$ ist voll, wenn
+\begin{enumerate}
+\item $\mathcal{D} \subseteq \mathcal{C}$
+\item $\forall \, a,b \in O^\mathcal{D}:  M^\mathcal{D}_{a,b} = M^\mathcal{C}_{a,b} $
+\end{enumerate}
+\item $\mathcal{D}$ ist isomorph geschlossen, wenn $\approx: a \rightarrow b \in M^\mathcal{C}_{a,b} \text{ mit } a \in O^\mathcal{D} \implies b \in O^\mathcal{D}$
+\item Wenn $\mathcal{D}$ voll und isomorph geschlossen ist: $\mathcal{D} \subseteq^{\approx} \mathcal{C}$
+\end{itemize}
+
+Notiz: Nur geschlossene Kategorien sind abstrakt (bis auf Isomorphie)!
+
+\paragraph{\defi 153: Episch reflektive Subkategorie}
+$\mathcal{D}$ ist reflektive Subkategorie von $\mathcal{C}$, wenn
+\begin{enumerate}
+\item $\mathcal{D} \subseteq \mathcal{C}$
+\item $\forall \, c \in O^\mathcal{C}: $  gibt es 
+\begin{itemize}
+\item ein $c_\mathcal{D} $ ($\mathcal{D}$- Reflektion von $c$) und 
+\item ein Morphismus $\eta_c: c \rightarrow c_\mathcal{D} $ (Reflektor von $c$) 
+\end{itemize}
+\end{enumerate}
+
+mit der folgenden Eigenschaft: $\forall \,  m: c \rightarrow z$, so dass $z \in \mathcal{D}$ gibt es einen eindeutigen Morphismus $m^* : c_\mathcal{D} \rightarrow z$ mit $m^* \circ \eta = m$ \\
+$\mathcal{D} $ ist episch reflektiv, wenn zusätzlich alle Reflektoren epis sind. 
+
+\begin{figure}[h]
+\noindent \centering{}\includegraphics[scale=0.1]{Abbildungen/153}\caption{Episch reflektive Subkategorie}
+\end{figure}
+
+\paragraph{\prop 154: Reflektionen sind abstrakt}
+Sei $\mathcal{D} $ reflektive Subkategorie von $\mathcal{C} $
+
+\begin{enumerate}
+\item $\eta_1: c \rightarrow c_\mathcal{D}^1 $ und $\eta_2: c \rightarrow c_\mathcal{D}^2 $ zwei Relfektionen von $\mathcal{C} \implies \approx: \mathcal{C}_\mathcal{D}^1 \rightarrow \mathcal{C}_\mathcal{D}^2 $ mit $\eta: c \rightarrow \mathcal{C}_\mathcal{D}^2$
+\item  $\eta: c \rightarrow \mathcal{C}_\mathcal{D}^1$ Reflektor für $c$ und $\approx: c_\mathcal{D}^1 \rightarrow c_\mathcal{D}^2$ ist Iso $\implies \eta' \, = \, \approx \circ \eta : c \rightarrow c_\mathcal{D}^2$ ist auch Reflektor für $c$
+\end{enumerate}
+
+\begin{figure}[h]
+\noindent \centering{}\includegraphics[scale=0.1]{Abbildungen/154}\caption{Reflektionen sind abstrakt}
+\end{figure}
+
+\paragraph{\prop 155: Isomorphe Reflektoren}
+ 
+\begin{enumerate}
+\item  $\mathcal{D} $ reflektive Subkategorie von $\mathcal{C} $ und $d \in \mathcal{D} \implies \eta_d : d \rightarrow d_\mathcal{D}$ ist iso.
+\item  $\mathcal{D} $ ist reflektive und isomorph-geschlossene Subkategorie von $\mathcal{C}$ \\ $ \implies \forall \, c \in \mathcal{C}: c \in \mathcal{D} \Leftrightarrow $ der Reflektor für $c$ ist iso.  
+\end{enumerate}
+
+\paragraph{GANZ WICHTIG! NOCH MAL ANGUCKEN! JA CHRISTIN - AUCH DU!\prop 156: Epische Reflektionen und Produkte}
+
+ $\mathcal{D}$ episch-reflektiv und isomorph-geschlossene Subkategorie von $\mathcal{C}$ und \\ $\Pi \mathcal{A}$ ist Produkt in $\mathcal{C}$ einer Familie $\mathcal{A} = (a_i)_{i \in I} $ von $\mathcal{D}$-Objekten, d.h. $(a_i \in \mathcal{D})_{i \in I}$ \\$ \implies \Pi \mathcal{A} \in \mathcal{D}$
+ 
+ \paragraph{\prop 157: Epische Reflektionen und extremale Monos}
+ $\mathcal{D}$ episch-reflektiv und isomorph-geschlossene Subkategorie von $\mathcal{C}$ mit $(\mathcal{E}, \mathcal{M}^x) \implies c \in \mathcal{D}$ wenn $m: c \rightarrowtail d$ ist extremal Mono und $d \in \mathcal{D}$. \\
+ D.h. in TCs Worten: \\
+ Wenn wir $\mathcal{D}$ aus Def haben und  $(\mathcal{E}, \mathcal{M})$ dann folgt daraus, jedes $d$ was über einen extremalen Mono erreicht wird, hat ein 'Urbild' in $c$.
+ 
+ 
+\paragraph{\prop 158: Co-Well-Powered Categories}
+Kategorie $\mathcal{C}$ its Co-well-powered, wenn $\forall \, a \in \mathcal{C}$ die 'Collection' abstrakter Quotienten (Def 77) von a eine Menge bilden. \\
+\emph{'Colletion abstrakter Quotienten von a' = Paarweise nicht isomorphe Epis mit Domain a.}
+ 
+ 
+\paragraph{Theorem 159: Charakterisierung episch reflektiver Subkategorien} 
+Gegeben: $\mathcal{C}$ co-well-powered Kategorie mit ($\mathcal{E},\mathcal{M}^x$). Isomorph geschlossene Subkategorie $\mathcal{D}$ von $\mathcal{C}$. Ist episch reflektiv $\Leftrightarrow \, \mathcal{D} $ geschlossen unter Produkten und extremalen Subobjekten ist. 
+ 
+ 
+\paragraph{\defi 160 Reflektion von Morphismen}  
+Gegeben $\mathcal{D}$ reflektive Subkategorie von $\mathcal{C}$ und $c \mapsto (\eta_c : c \rightarrow c_\mathcal{D})$ eine festgelegte Auswahl von Reflektoren $\eta_c$ für jedes Objekt $c \in \mathcal{C}$.
+Dann definieren wir das folgende Mapping von Morphismen $m: c \rightarrow c' \in \mathcal{C}$ zu Morphismen in $\mathcal{D}: m : c \rightarrow c' \mapsto m^\mathcal{D}: c_\mathcal{D} \rightarrow c_\mathcal{D}' \, = \, (\eta_{c'} \circ m)^* : c_\mathcal{D} \rightarrow c_\mathcal{D}'$.  \\
+\emph{In CTs Worten: Morphismen werden von $\mathcal{C}$ nach $\mathcal{D}$ reflektiert.}
+
+\begin{figure}[h]
+\noindent \centering{}\includegraphics[scale=0.09]{Abbildungen/160}\caption{Reflektion von Monomorphismen}
+\end{figure}
+
+\paragraph{\prop 161 Eigenschaften von Morphismusreflektionen}  
+$\mathcal{D}$ reflektive Subkategorie von $\mathcal{C}$ und $m \mapsto m^\mathcal{D} \Rightarrow$
+
+\begin{enumerate}
+\item $id_c^D = id_{c_\mathcal{D}}$ $\forall c \in C$
+\item $(m \circ_\mathcal{C} n)^\mathcal{D} = m^\mathcal{D} \circ_\mathcal{D} n^\mathcal{D}$  wenn $m,n$ komponierbar in $C$.
+\end{enumerate}
+\emph{CT Notiz zu 2.: Erst verkullern und dann Übertragen ist gleich zu erst einzeln Übertragen und dann verkullern.}
+
+
+\section{Syntaktifizierung}
+
+\subsection{Terme und Termsysteme}
+
+\paragraph{\defi 162 Variablen-Mengen und Variablen-Systeme}  
+Eine Variablenmenge $X$ ist eine S-Indizierte Familie von Mengen von Variablen, d.h. $X = (X_s)_{s \in S*}$ \\
+Eine Variablenmenge ist ein algebraisches System in dem alle Funktionen komplett undefiniert sind.
+
+\paragraph{\defi 163 Terme und totale Termsysteme}
+Die 'Collection' von Termen $T^{\Sigma,X}$ mit Variablen in $X$ ist die kleinste S-Indizierte Familie von Mengen $T^{\Sigma, X} = (T^{\Sigma, X}_s)_{s \in S}$ die folgende Bedingungen erfüllen:
+\begin{enumerate}
+\item Variablen: $x \in T^{\Sigma, X}_s $ wenn $x \in X_s$
+\item Funktionen: $f_i(t) \in T^{\Sigma, X}_s $ wenn $f \in O_{w,v} $ und $t \in (T^{\Sigma, X})^w $ und $v = v_l sv_r$ und $i = |v_l| +1$
+
+Das totale Termsystem $T^{\Sigma, X}$ mit Variablen in $X$ ist das $\Sigma$-System, welches die Familie von Termen $(T^{\Sigma, X}_s)_{s \in S}$ als Träger nehmen und alle Funktionen definieren durch:
+
+\item Funktionen: Für $f \in O_{w,v} $ und $|v| \geq 1$ und $x \in (T^{\Sigma, X})^w: f^{T^{\Sigma, X}}(x) = (f_i(x))_{i \in 1 \dots |v|}$
+\item Prädikate: Für $f \in O_{w, \epsilon}$ und $f \neq \, =: f^{T^{\Sigma, X}} = \emptyset$, d.h. $f^{T^{\Sigma, X}}$ ist komplett undefiniert. 
+\end{enumerate}
+
+\emph{Notiz CT:  Zu 3.: Ist das nicht das mit der 'Tiefe' von Termen bei Elsner? s(s(s(...))) \\
+'$f \neq =$' bedeutet: f ist komplett undefiniert}
+
+
+\paragraph{\defi 164 Operationen auf Termen}  
+Die Operationen (a) enthalten Variablen, (b) enthalten Terme und (c) die Höhe ist definiert auf der 'Collection' von Termen $T^{\Sigma, X}$ durch:
+
+\begin{align*}
+\textrm{\_}_{X}:\left(T^{\Sigma,X}\right)^{w}\rightarrow2^{X}\!::=\, & t_{X}=\begin{cases}
+\{t\} & t\in X\\
+x_{X} & t=f_{i}(x),f\in O_{w,v},1\leq i\leq|v|\\
+\emptyset & t\in\left(T^{\Sigma,X}\right)^{\epsilon}\\
+x_{X}^{1}\cup x_{X}^{2} & t=x^{1}\times x^{2}
+\end{cases} & \textrm{\!(a)}\\
+\textrm{\_}_{T}:\left(T^{\Sigma,X}\right)^{w}\rightarrow2^{T^{\Sigma,X}}\!::=\, & t_{T}=\begin{cases}
+\{t\} & \! t\in X\\
+\{f_{j}(x)::j\in[1,|v|]\}\cup x_{T} & \! t=f_{i}(x),f\in O_{w,v},i\in[1,|v|]\\
+\emptyset & \! t\in\left(T^{\Sigma,X}\right)^{\epsilon}\\
+x_{T}^{1}\cup x_{T}^{2} & \! t=x^{1}\times x^{2}
+\end{cases} & \textrm{\!(b)}\\
+|\textrm{\_|:}\left(T^{\Sigma,X}\right)^{w}\rightarrow\mathbb{N}_{0}\!::=\, & |t|=\begin{cases}
+0 & t\in X\\
+|x|+1 & t=f_{i}(x),f\in O_{w,v},1\leq i\leq|v|\\
+0 & t\in\left(T^{\Sigma,X}\right)^{\epsilon}\\
+\max(|x^{1}|,|x^{2}|) & t=x^{1}\times x^{2}
+\end{cases} & \textrm{\!(c)}
+\end{align*}
+
+\paragraph{\defi 165 Partielle Termsysteme}  
+Ein partielles Termsystem $P^{\Sigma,X}$ ist ein Subsystem von dem totalen Termsystem $T^{\Sigma,X}$, so dass 
+\begin{enumerate}
+\item $X \subseteq P^{\Sigma,X}$
+\item $\left\lceil X\right\rceil _{P^{\Sigma,X}}^{c}$ (Wenn Argumente des Terms selber wieder Terme sind, sind diese auch in $P^{\Sigma,X}$ enthalten)
+\end{enumerate}
+
+\paragraph{\coro 166 Variablen-Einbettung und eindeutiger Homomorphismus}  
+\begin{enumerate}
+\item Für jedes partielle System $P^{\Sigma,X}$ die Einbettung $X\hookrightarrow P^{\Sigma,X}$ ist epi.
+\item $h^1, h^2: P^{\Sigma,X} \rightarrow A$ homo eines partiellen Systems $P^{\Sigma,X}$ in ein anderes algebraisches System $A \implies h_{|X|}^1 = h_{|X|}^2 \implies h^1 = h^2$, d.h. wenn die Homos $h_1$ und $h_2$ in den Variablen übereinstimmen, sind sie gleich.  
+\end{enumerate}
+
+\paragraph{\prop 167 Struktur des partiellen Systems}
+Die Menge aller partiellen Systeme $P^{\Sigma,X}$ stimmt bis auf einer Variablenmenge $X$ überein mit einem kompletten Verband bis auf die Subsystem-Relation.
+
+\paragraph{\prop 168 Generiertes Termsystem}
+Gegeben: $X$ und eine Familie von Termmengen $\mathsf{T}=\left(\mathsf{T}_{s}\subseteq T_{s}^{\Sigma,X}\right)_{s\in S}$,
+$P_{\mathsf{T}}^{\Sigma,X}$ beschreibt das kleinste partielle Termsystem
+das alle Terme in  $\mathsf{T}$ beinhaltet, d.h. ~$P_{\mathsf{T}}^{\Sigma,X}=\bigcap\left\{ P^{\Sigma,X}\in\mathcal{P}^{\Sigma,X}\,::\,\left(\mathsf{T}_{s}\subseteq P_{s}^{\Sigma,X}\right)_{s\in S}\right\} $
+
+\paragraph{\prop 169 Konstruktion von generierten Termsystemen}
+$\mathsf{T}=\left(\mathsf{T}_{s}\subseteq T_{s}^{\Sigma,X}\right)_{s\in S}$,
+die Träger von $P_{\mathsf{T}}^{\Sigma,X}$ können wie folgt konstruiert werden
+$\underset{t\in\mathsf{T}}{\bigcup}t_{T}$.
+
+
+\paragraph{\prop 170 Generiertes Termsystemen}
+Das generierte Termsystem hat die folgenden Eigenschaften: 
+\begin{enumerate}
+\item $\mathsf{T}\subseteq P_{\mathsf{T}}^{\Sigma,X}$
+\item $\mathsf{T}_{1}\subseteq\mathsf{T}_{2}\implies P_{\mathsf{T}_{1}}^{\Sigma,X}\subseteq^{f}P_{\mathsf{T}_{2}}^{\Sigma,X}$.
+\item $P_{\left(P_{\mathsf{T}}^{\Sigma,X}\right)}^{\Sigma,X}=P_{\mathsf{T}}^{\Sigma,X}$
+\end{enumerate}
+
+\paragraph{\prop 171 Variablenzuweisung und Erweiterungen von Variablenzuweisungen} 
+\begin{enumerate}
+\item Geg. $X$, $\Sigma$-System $A$: Eine Variablenzuweisung ist ein Homomorphismus $h: X \rightarrow A$
+\item $P^{\Sigma,X}$ mit Variablen in $X$, mit der Variableneinbettung $x: X \hookrightarrow P^{\Sigma,X}$ und $h: X \rightarrow A$ ist eine Variablenzuweisung in $A$. \\
+$\implies$ wenn er existiert, wird der eindeutige Homomorphismus, der die Variablenzuweisung zu $P^{\Sigma,X}$ erweitert,  bezeichnet mit $h^*: P^{\Sigma,X} \rightarrow A$, d.h. $h^*$ ist der einzige Homomorphismus, der $h^* \circ x = h $ erfüllt.
+\end{enumerate}
+
+\paragraph{\defi 172 Auswertung} 
+Gegeben Variablenzuweisung $h: X \rightarrow A$. Partielles Termsystem $P(h) = (P(h)_s)_{s \in S} \subseteq T^{\Sigma,X}$, genannt die Auswertungsdomain von $h$, und die Auswertung $h*: P(h) \rightarrow A = (h_s^*: P(h)_s \rightarrow A_s)_{s \in S}$ selbst, sind wie folgt definiert:
+$P(h)$ ist das kleinste partielle Termsystem das das folgende erfüllt: 
+\begin{align*}
+\textrm{(i) } & x\in P(h)_{s}\textrm{ if }x\in X_{s}\\
+\textrm{(i') } & h_{s}^{*}(x)=h_{s}(x)\textrm{ for }x\in X_{s}\\
+\textrm{(ii) } & f_{i}(x)\in P(h)_{s}\textrm{ if }f\in O_{w,v},v=v_{l}sv_{r},i=|v_{l}|+1,x\in\left(P(h)\right)^{w}\textrm{ and }f^{A}\textrm{ defined }\textrm{for }\left(h^{*}\right)^{w}(x)\\
+\textrm{(ii') } & h_{s}^{*}(f_{i}(x))=f^{A}\left(\left(h^{*}\right)^{w}(x)\right)_{i}\textrm{ if }f\in O_{w,v},f_{i}(x)\in P(h)_{s}
+\end{align*}
+
+\paragraph{\prop 173 Auswertungshomomorphismus}
+Die Auswertung $h^*: P(h) \rightarrow A$ ist für die Variablenzuweisungen $h: X \rightarrow A$ (in Def 172) ist ein Homo.
+ 
+\paragraph{\coro 174 Auswertungen und Homomorphismen}
+$k: A \rightarrow B$ ist Homo und $h: X \rightarrow A$ Variablenzuweisung $\Rightarrow$
+\begin{enumerate}
+\item $P(h) \subseteq P(k \circ h)$
+\item $k  \circ h^* = (k \circ h)^* \circ \subseteq_k$, wenn der Inklusionsmorphismus von $P(h)$ in $P(k \circ h)$ bezeichnet wird durch $\subseteq_{k}: P(h) \rightarrow P(k \circ h)$
+\end{enumerate}
+
+\paragraph{\coro 175 Auswertungen und geschlossene Monomorphismen}
+$k: A \rightarrow B$ geschlossener Mono und $h: X \rightarrow A$ Variablenzuweisung $\Rightarrow$
+\begin{enumerate}
+\item $P(h) = P(k \circ h)$
+\item $k  \circ h^* = (k \circ h)^*$
+\end{enumerate}
+
+\paragraph{\coro 175 Auswertungen und Epimorphismen} 
+$e: B \twoheadrightarrow C$ ist epi $\implies e^*: P(e) \rightarrow C$ ist surjektiv.
+
+
+\subsection{Formeln und syntaktische Präsentation}
+
+\paragraph{\defi 177 Atomare Formeln} 
+Die Menge atomarer Formeln $F^{\Sigma,X} = (P^{\Sigma,X}_s)_{s \in S \cup \{ \epsilon\}}$ über einer gegebenen Variablenmenge $X$ ist die kleinste Menge die folgende Klauseln definiert wird:
+\begin{enumerate}
+\item Existenzformeln: $t \in F^{\Sigma,X}_s$, wenn $t \in T^{\Sigma,X}_s$
+\item Atomare Formeln: $f(t) \in F^{\Sigma,X}_{\epsilon}$, wenn $f \in O_{w,\epsilon}$, $t \in (T^{\Sigma,X})^w$
+\end{enumerate}
+
+\paragraph{\defi 178 Operatoren auf Formeln} 
+Die Operatoren \emph{beinhaltete Variablen}$(\__X)$, \emph{beinhaltete Terme}$(\__T)$, \emph{Höhe}$(|\_|)$ können auf Formeln und Familien von Formeln durch die folgenden zusätzlichen Definitionen erweitert werden:
+\begin{eqnarray*}
+\textrm{\_}_{X}:F_{\epsilon}^{\Sigma,X}\rightarrow2^{X} & ::= & f(x)_{X}=x_{X}\\
+\textrm{\_}_{X}:2^{F^{\Sigma,X}}\rightarrow2^{X} & ::= & F_{X}=\left.\bigcup\right._{a\in F}a_{X}\\
+\textrm{\_}_{T}:F_{\epsilon}^{\Sigma,X}\rightarrow2^{T^{\Sigma,X}} & ::= & f(x)_{T}=x_{T}\\
+\textrm{\_}_{T}:2^{F^{\Sigma,X}}\rightarrow2^{X} & ::= & F_{T}=\left.\bigcup\right._{a\in F}a_{T}\\
+|\textrm{\_|:}F_{\epsilon}^{\Sigma,X}\rightarrow\mathbb{N}_{0} & ::= & |f(x)|=|x|
+\end{eqnarray*}
+
+\paragraph{\defi 179 Syntaktische Präsentation}
+Eine syntaktische Präsentation $F = (X, F \subseteq F^{\Sigma,X})$ eines algebraischen System $A$ besteht aus der Variablenmenge $X$ und der Menge von Formeln $F$ über $X$, welche gültig im präsentierten System sind.
+Eine Präsentation endlich, wenn $X$ und $F$ endlich sind.
+Wenn
+
+\begin{enumerate}
+\item $\mathsf{T}=F_{T}$ in die Menge von Termen die in $F$ auftreten,
+\item $P_{\mathsf{T}}^{\Sigma,X}$ ist das partielle Termsystem definiert durch  $\mathsf{T}$ und
+\item $P_{\mathsf{F}}^{\Sigma,X}$ ist das kleinste Supersystem von  $P_{\mathsf{T}}^{\Sigma,X}$, wo, für allel $f\in O_{w,\epsilon}$
+und  $f\neq\,\,=$, $f^{P_{\mathsf{F}}^{\Sigma,X}}(x)$ definiert ist, wenn 
+$f(x)\in F$ \\
+$\implies$ dann wird das \emph{System} $A_{F}$, welches durch $F$  \emph{präsentiert} wird,
+wird  definiert durch $\mathbf{A}_{F}=\left(P_{\mathsf{F}}^{\Sigma,X}\right)_{|\equiv_{F}}$, wobei
+\item $\equiv_{F}$ ist die durch $\sim_{F}=\{(x_{1},x_{2})\,::\,\,\,\,=(x_{1},x_{2})\,\in F\}$ generierte Kongruenz,
+welche die Menge der Gleichheiten, die durch $F$ spezifiert sind, ist.
+\end{enumerate}
+
+Der Epimorphismus $x^F = \, \equiv_{F}\circ\subseteq_{\mathsf{F}}\circ\, x:X\rightarrow\mathbf{A}_{F}$
+definiert durch folgende Epis: %
+\begin{itemize}
+\item $x:X\rightarrow P_{\mathsf{T}}^{\Sigma,X}$
+\item $\subseteq_{\mathsf{F}}:P_{\mathsf{T}}^{\Sigma,X}\rightarrow P_{\mathsf{F}}^{\Sigma,X}$ und 
+\item $\equiv_{F}:P_{\mathsf{F}}^{\Sigma,X}\rightarrow\mathbf{A}_{F}$  
+\end{itemize}
+ 
+ \newpage 
+\paragraph{\prop 180 Sub-Präsentationen}
+$(X^1, F^1)$ ist Sub-Präsentation von $(X^2, F^2)$ im Sinne von $X^1 \subseteq X^2$ und $F^1 \subseteq F^2$ mit den Einbettungshomo $i: X^1 \rightarrow X^2$ \\
+$\implies $ es gibt einen eindeutigen Homo $i^*: \mathbf{A}_{F^1} \rightarrow \mathbf{A}_{F^2}$ mit $i^* \circ x^{F^1} = x^{F^2} \circ i$
+
+\begin{figure}[h]
+\noindent \centering{}\includegraphics[scale=0.5]{Abbildungen/180}\caption{Sub-Präsentationen}
+\end{figure}
+
+\paragraph{\defi 181 Erweiterte Auswertung}
+Gegeben $h: X \rightarrow A$ Variablenzuweisung. $F(h) = (X,(F(h)_s)_{s \in S \cup \{\epsilon\}}$ (Syntaktische Präsentation des geschlossenen Sub-Systems von $A$, welches generiert wurde durch $h(X)$) ist die kleinste Menge von Formeln definiert durch
+\begin{enumerate}
+\item $(F(h)_s = P(h)_s)_{s \in S}$ und 
+\item $f(x) \in F(h)_\epsilon$, wenn $f \in O_{w, \epsilon}$, $f \in P(h)^w$, und $f^A$ ist definiert für $(h*)^w(x)$
+\end{enumerate}
+
+\paragraph{\coro 182 Erweiterte Auswertung und Homos}
+$k: A \rightarrow B$ ist Homo und $h: X \rightarrow A$ Variablenzuweisung $\implies $ $F(h) \subseteq F(k \circ h)$
+
+\paragraph{\coro 183 Syntaktische Präsentation für ein System}
+$\mathbf{A}_{F(id_A)} \approx A$, wobei $id_A: (A_s)_{s \in S} \rightarrow A$ ist die identische Variablenzuweisung definiert durch $a \mapsto a$ für alle $a \in (A_s)_{s \in S*}$
+
+\paragraph{\coro 184 Syntaktische Präsentation von Epis}
+$e: B \twoheadrightarrow C$ ist epi $\implies \mathbf{A}_{F(e)} \approx C$ und $\approx \circ x^{F(e)} = e$
+
+
+\section{Approximation}
+\subsection{kommt nix}
+\subsection{kommt nix}
+\subsection{TODO: Pushout und Pullback}
+
+
+
