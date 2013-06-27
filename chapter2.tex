@@ -9,20 +9,20 @@ Kategorie $\mathcal{D}$ ist Subkategorie von $\mathcal{C}$ ($\mathcal{D} \subset
 \item $O^\mathcal{D} \subseteq O^\mathcal{C}$ (Objekte in Teilmengenbeziehung)
 \item $\forall \, a,b \in O^\mathcal{D}:  M^\mathcal{D}_{a,b} \subseteq M^\mathcal{C}_{a,b} $
 \item $\forall \, a \in O^\mathcal{D}: id^\mathcal{D}_a = id^\mathcal{C}_a$
-\item $\forall \, a,b,c, \in O^\mathcal{D} \wedge m,n \in O^\mathcal{D}_{a,b}: n \circ^{\mathcal{D}_{a,b,c}} m  = n \circ^{\mathcal{C}_{a,b,c}} m  $
+\item $\forall \, a,b,c, \in O^\mathcal{D} \wedge m \in M^\mathcal{D}_{a,b}, n \in M^\mathcal{D}_{b,c}: n \circ^{\mathcal{D}}_{a,b,c} m  = n \circ^{\mathcal{C}}_{a,b,c} m  $
 \end{enumerate}
 
 \begin{itemize}
 \item $\mathcal{D}$ ist voll, wenn
 \begin{enumerate}
-\item $\mathcal{D} \subseteq \mathcal{C}$
+\item $\mathcal{D} \subseteq \mathcal{C}$ und
 \item $\forall \, a,b \in O^\mathcal{D}:  M^\mathcal{D}_{a,b} = M^\mathcal{C}_{a,b} $
 \end{enumerate}
 \item $\mathcal{D}$ ist isomorph geschlossen, wenn $\approx: a \rightarrow b \in M^\mathcal{C}_{a,b} \text{ mit } a \in O^\mathcal{D} \implies b \in O^\mathcal{D}$
-\item Wenn $\mathcal{D}$ voll und isomorph geschlossen ist: $\mathcal{D} \subseteq^{\approx} \mathcal{C}$
+\item Wenn $\mathcal{D}$ voll und isomorph-geschlossen ist: $\mathcal{D} \subseteq^{\approx} \mathcal{C}$
 \end{itemize}
 
-Notiz: Nur geschlossene Kategorien sind abstrakt (bis auf Isomorphie)!
+Notiz: Nur isomorph-geschlossene Kategorien sind abstrakt (bis auf Isomorphie)!
 
 \paragraph{\defi 153: Episch reflektive Subkategorie}
 $\mathcal{D}$ ist reflektive Subkategorie von $\mathcal{C}$, wenn
@@ -35,7 +35,7 @@ $\mathcal{D}$ ist reflektive Subkategorie von $\mathcal{C}$, wenn
 \end{itemize}
 \end{enumerate}
 
-mit der folgenden Eigenschaft: $\forall \,  m: c \rightarrow z$, so dass $z \in \mathcal{D}$ gibt es einen eindeutigen Morphismus $m^* : c_\mathcal{D} \rightarrow z$ mit $m^* \circ \eta = m$ \\
+mit der folgenden Eigenschaft: $\forall \,  m: c \rightarrow z$, so dass $z \in \mathcal{D}$, dann gibt es einen eindeutigen Morphismus $m^* : c_\mathcal{D} \rightarrow z$ mit $m^* \circ \eta = m$ \\
 $\mathcal{D} $ ist episch reflektiv, wenn zusätzlich alle Reflektoren epis sind. 
 
 \begin{figure}[h]
@@ -61,23 +61,23 @@ Sei $\mathcal{D} $ reflektive Subkategorie von $\mathcal{C} $
 \item  $\mathcal{D} $ ist reflektive und isomorph-geschlossene Subkategorie von $\mathcal{C}$ \\ $ \implies \forall \, c \in \mathcal{C}: c \in \mathcal{D} \Leftrightarrow $ der Reflektor für $c$ ist iso.  
 \end{enumerate}
 
-\paragraph{GANZ WICHTIG! NOCH MAL ANGUCKEN! JA CHRISTIN - AUCH DU!\prop 156: Epische Reflektionen und Produkte}
+\paragraph{\prop 156: Epische Reflektionen und Produkte}
 
  $\mathcal{D}$ episch-reflektiv und isomorph-geschlossene Subkategorie von $\mathcal{C}$ und \\ $\Pi \mathcal{A}$ ist Produkt in $\mathcal{C}$ einer Familie $\mathcal{A} = (a_i)_{i \in I} $ von $\mathcal{D}$-Objekten, d.h. $(a_i \in \mathcal{D})_{i \in I}$ \\$ \implies \Pi \mathcal{A} \in \mathcal{D}$
  
  \paragraph{\prop 157: Epische Reflektionen und extremale Monos}
  $\mathcal{D}$ episch-reflektiv und isomorph-geschlossene Subkategorie von $\mathcal{C}$ mit $(\mathcal{E}, \mathcal{M}^x) \implies c \in \mathcal{D}$ wenn $m: c \rightarrowtail d$ ist extremal Mono und $d \in \mathcal{D}$. \\
  D.h. in TCs Worten: \\
- Wenn wir $\mathcal{D}$ aus Def haben und  $(\mathcal{E}, \mathcal{M})$ dann folgt daraus, jedes $d$ was über einen extremalen Mono erreicht wird, hat ein 'Urbild' in $c$.
+ Wenn wir $\mathcal{D}$ aus Def haben und  $(\mathcal{E}, \mathcal{M}^x)$ dann folgt daraus, jedes $d$, was über einen extremalen Mono erreicht wird, hat ein 'Urbild' in $\mathcal{D}$.
  
  
 \paragraph{\prop 158: Co-Well-Powered Categories}
-Kategorie $\mathcal{C}$ its Co-well-powered, wenn $\forall \, a \in \mathcal{C}$ die 'Collection' abstrakter Quotienten (Def 77) von a eine Menge bilden. \\
+Kategorie $\mathcal{C}$ its Co-well-powered, wenn $\forall \, a \in \mathcal{C}$ die 'Collection' abstrakter Quotienten (Def 77) von a eine Menge bildet. \\
 \emph{'Colletion abstrakter Quotienten von a' = Paarweise nicht isomorphe Epis mit Domain a.}
  
  
 \paragraph{Theorem 159: Charakterisierung episch reflektiver Subkategorien} 
-Gegeben: $\mathcal{C}$ co-well-powered Kategorie mit ($\mathcal{E},\mathcal{M}^x$). Isomorph geschlossene Subkategorie $\mathcal{D}$ von $\mathcal{C}$. Ist episch reflektiv $\Leftrightarrow \, \mathcal{D} $ geschlossen unter Produkten und extremalen Subobjekten ist. 
+Gegeben: $\mathcal{C}$ co-well-powered Kategorie mit ($\mathcal{E},\mathcal{M}^x$). Isomorph geschlossene Subkategorie $\mathcal{D}$ von $\mathcal{C}$i ist episch reflektiv $\Leftrightarrow \, \mathcal{D} $ geschlossen unter Produkten und extremalen Subobjekten ist. 
  
  
 \paragraph{\defi 160 Reflektion von Morphismen}  
@@ -116,15 +116,21 @@ Die 'Collection' von Termen $T^{\Sigma,X}$ mit Variablen in $X$ ist die kleinste
 Das totale Termsystem $T^{\Sigma, X}$ mit Variablen in $X$ ist das $\Sigma$-System, welches die Familie von Termen $(T^{\Sigma, X}_s)_{s \in S}$ als Träger nehmen und alle Funktionen definieren durch:
 
 \item Funktionen: Für $f \in O_{w,v} $ und $|v| \geq 1$ und $x \in (T^{\Sigma, X})^w: f^{T^{\Sigma, X}}(x) = (f_i(x))_{i \in 1 \dots |v|}$
-\item Prädikate: Für $f \in O_{w, \epsilon}$ und $f \neq \, =: f^{T^{\Sigma, X}} = \emptyset$, d.h. $f^{T^{\Sigma, X}}$ ist komplett undefiniert. 
+\item Prädikate: Für $f \in O_{w, \epsilon}$ und $f \neq \, =: f^{T^{\Sigma, X}} = \emptyset$, d.h. $f^{T^{\Sigma, X}}$ Alle Prädikate bis auf die Gleichheit sind komplett undefiniert. 
 \end{enumerate}
 
-\emph{Notiz CT:  Zu 3.: Ist das nicht das mit der 'Tiefe' von Termen bei Elsner? s(s(s(...))) \\
-'$f \neq =$' bedeutet: f ist komplett undefiniert}
+\emph{Notiz CT:  1. und 2. definiert die Trägermengen des totalen Termsystems \\
+ Zu 3.: Ist das nicht das mit der 'Tiefe' von Termen bei Elsner? s(s(s(...))) \\
+'$f \neq =$' bedeutet: f ist nur für = definiert. Sonst nichts}
 
 
 \paragraph{\defi 164 Operationen auf Termen}  
 Die Operationen (a) enthalten Variablen, (b) enthalten Terme und (c) die Höhe ist definiert auf der 'Collection' von Termen $T^{\Sigma, X}$ durch:
+
+1. Fall: Variablen \\
+2. Fall: Rekursiver Aufruf für Operationen mit Termen \\
+3. Fall: Konstanten \\
+4. Fall: Wenn Variable Kreuzprodukt \\
 
 \begin{align*}
 \textrm{\_}_{X}:\left(T^{\Sigma,X}\right)^{w}\rightarrow2^{X}\!::=\, & t_{X}=\begin{cases}
@@ -166,7 +172,8 @@ Die Menge aller partiellen Systeme $P^{\Sigma,X}$ stimmt bis auf einer Variablen
 \paragraph{\prop 168 Generiertes Termsystem}
 Gegeben: $X$ und eine Familie von Termmengen $\mathsf{T}=\left(\mathsf{T}_{s}\subseteq T_{s}^{\Sigma,X}\right)_{s\in S}$,
 $P_{\mathsf{T}}^{\Sigma,X}$ beschreibt das kleinste partielle Termsystem
-das alle Terme in  $\mathsf{T}$ beinhaltet, d.h. ~$P_{\mathsf{T}}^{\Sigma,X}=\bigcap\left\{ P^{\Sigma,X}\in\mathcal{P}^{\Sigma,X}\,::\,\left(\mathsf{T}_{s}\subseteq P_{s}^{\Sigma,X}\right)_{s\in S}\right\} $
+das alle Terme in  $\mathsf{T}$ beinhaltet, d.h. ~$P_{\mathsf{T}}^{\Sigma,X}=\bigcap\left\{ P^{\Sigma,X}\in\mathcal{P}^{\Sigma,X}\,::\,\left(\mathsf{T}_{s}\subseteq P_{s}^{\Sigma,X}\right)_{s\in S}\right\}$\footnote{$\mathcal{P}$ ist eine Menge von partiellen Termsystemen} 
+
 
 \paragraph{\prop 169 Konstruktion von generierten Termsystemen}
 $\mathsf{T}=\left(\mathsf{T}_{s}\subseteq T_{s}^{\Sigma,X}\right)_{s\in S}$,
@@ -293,9 +300,171 @@ $e: B \twoheadrightarrow C$ ist epi $\implies \mathbf{A}_{F(e)} \approx C$ und $
 \section{Approximation}
 \subsection{kommt nix}
 \subsection{kommt nix}
-\subsection{TODO: Pushout und Pullback}
+\subsection{Pushout und Pullback}
+
+\paragraph{\defi 206 Span, Co-Span}
+In einer Kategorie $\mathcal{C}$: \\Span ist ein Paar $(p,q)$ von Morphismen mit der selben Domain. \\
+Co-Span ist so ein paar mit der selben Co-Domain. \\ 
+ \emph{Notiz: Span ist ein Diagramm von Graphen $\bullet \leftarrow \bullet \rightarrow \bullet$ und ein Co-Span \\ ist ein Diagramm von $\bullet \rightarrow  \bullet \leftarrow \bullet$ }
+
+\begin{multicols}{2}
+\columnseprule1pt
+
+\textbf{\underline{Pushout}} 
+
+\textbf{\defi 207 Pushout} \\
+Ein Pushout eines Span $(P: a \nach b, q: a \nach c)$ ist ein Paar von Morphismen $(p^*: c \nach d, q^*: b \nach d)$, so dass $(p^*, q^*, p^* \circ q = q^* \circ p)$ ist der Co-Limit des Span. \\
+\emph{Notiz: Zwei Morphismen $p^*$ und $q^*$ Charakterisieren den Co-Limes, der dritte $p^* \circ q = q^* \circ p$ kann von der Co-Cone-Eigenschaft abgeleitet werden.}
+
+\textbf{\coro 208 Pushout Komposition} \\
+\ref{fig:208} ist kommutatives Diagramm und $(1)$ ist Pushout, dann $(2)$ ist Pushout $\Leftrightarrow$ das ganze Diagramm $(1)+(2)$ ist ein Pushout.
 
 
+
+
+\columnbreak
+
+\textbf{\underline{Pullback}} 
+
+\textbf{\defi 216 Pullback} \\
+Ein Pullback eines Co-Span $(p: b \nach a, q: c \nach a)$ ist ein Paar von Morphismen $(p^*: d \nach c, q^*: d \nach b)$, so dass $p^*,q^*, q \circ p^* = p \circ q^*$ ist der Limit des Co-Span.
+
+\end{multicols}
+
+\begin{figure}[h]
+\centering
+\subfigure[Pushout\label{fig:208}]{\includegraphics[width=0.21\textwidth]{Abbildungen/208}} \qquad \qquad \qquad
+\subfigure[Pullback\label{fig:217}]{\includegraphics[width=0.20\textwidth]{Abbildungen/217}}
+\caption{Definitionen}
+\end{figure}
+
+
+\begin{multicols}{2}
+\columnseprule1pt
+
+\textbf{\underline{Pushout}} 
+
+\textbf{\coro 209 Pushout Dekomposition} \\
+In einer Kategorie, in welcher jeder Span ein Pushout hat kann der Pushout ($p^*, (r \circ q)^*$) des Span $(p, r \circ q)$ dekomponiert werden in zwei Produkte 
+\begin{enumerate}
+\item $(p' q^*)$ von $(p,q)$ und 
+\item $(p^*, r^*)$ von $(p', r)$, so dass \\ $(r \circ q)^* = r^* \circ q*$
+\end{enumerate}
+
+\textbf{\coro 210 Pushouts bewahren Epis} \\
+$(p^*, q^*)$ ist Pushout $(p,q)$ und $p$ ist Epi.\\
+$\implies p^*$ ist epi.
+
+
+\columnbreak
+
+\textbf{\underline{Pullback}} 
+
+\textbf{\prop 151 Binäres Co-Produkt in \syssig} \\
+Das variante System $A + B$ ist das Co-Produkt der zwei Systeme $A$ und $B$.
+
+\end{multicols}
+
+\begin{figure}[h]
+\centering
+\subfigure[Pushout\label{fig:209}]{\includegraphics[width=0.22\textwidth]{Abbildungen/209}} \qquad \qquad \qquad
+\subfigure[Pullback\label{fig:todo}]{\includegraphics[width=0.22\textwidth]{Abbildungen/todo}}
+\caption{Dekomposition}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfigure[Pushouts und Epis\label{fig:210}]{\includegraphics[width=0.22\textwidth]{Abbildungen/210}} \qquad \qquad \qquad
+\subfigure[Pullback\label{fig:todo}]{\includegraphics[width=0.22\textwidth]{Abbildungen/todo}}
+\caption{Pushouts und Pullbacks}
+\end{figure}
+
+\newpage 
+
+\begin{multicols}{2}
+\columnseprule1pt
+
+\textbf{\underline{Pushout}} 
+
+\textbf{\prop 211 Pushouts bewahren extremale Epis} \\
+Die zugrundeliegende Kategorie $(\mathcal{C})$ hat ein $(\mathcal{E}^x, \mathcal{M})$, $(p^*, q^*)$ ist Pushout von $(p,q)$ und $p$ ist extremal Epi $\implies$ $p^*$ ist extremal Epi.
+
+\textbf{\prop 212 Pushouts bewahren Sektionen} \\
+$(p^*, q^*)$ ist Pushout von $(p,q)$ und $p$ ist Sektion $\implies $ $p^*$ ist Sektion.
+
+\textbf{\coro 213 Abgeleitete Pushouts} \\
+$(p^*, q^*)$ ist Pushout von $(p,q)$, wobei $p$ Sektion $\implies$ $\left ( q, (p^*)^{-1} \right )$ ist Pushout von $(q^*, p^{-1})$, wenn wir $(p^*)^{-1}$ als das eindeutige $u$ in Prop 212 wählen.
+
+\columnbreak
+
+\textbf{\underline{Pullback}} 
+
+\textbf{\prop 151 Binäres Co-Produkt in \syssig} \\
+Das variante System $A + B$ ist das Co-Produkt der zwei Systeme $A$ und $B$.
+
+\end{multicols}
+
+
+\begin{figure}[h]
+\centering
+\subfigure[Pushouts und extremal Epi\label{fig:211}]{\includegraphics[width=0.22\textwidth]{Abbildungen/211}} \qquad \qquad \qquad
+\subfigure[Pullback\label{fig:todo}]{\includegraphics[width=0.22\textwidth]{Abbildungen/todo}}
+\caption{Pushouts und Pullbacks}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfigure[Pushouts und extremal Epi\label{fig:212}]{\includegraphics[width=0.22\textwidth]{Abbildungen/212}} \qquad \qquad \qquad
+\subfigure[Pullback\label{fig:todo}]{\includegraphics[width=0.22\textwidth]{Abbildungen/todo}}
+\caption{Pushouts und Pullbacks}
+\end{figure}
+\newpage 
+
+\begin{multicols}{2}
+\columnseprule1pt
+
+\textbf{\underline{Pushout}} 
+
+\textbf{\coro 214 Pushouts bewahren Isomorphismen} \\
+$(p^*, q^*)$ ist Pushout von $(p,q)$ und $p$ Iso $\implies$ $p^*$ ist Iso.
+
+\textbf{\prop 215 Spezielle Pushouts in $Sys(\Sigma)$} \\
+Wenn $(p:A\rightarrowtail B,q:A\rightarrowtail C)$ span extremaler Monos  in $\mathsf{Sys}(\Sigma)$, kann der pushout $(p^{*}:C\rightarrowtail D,q^{*}:B\rightarrowtail D)$
+wie folgt konstruiert werden. Obda. Angenommen, dass $A_{s}$, $B_{s}$, und $C_{s}$ paarweise disjunkt sind, jede Sorte  $s$:
+
+\begin{align*}
+\textrm{\emph{(i)} } & \forall \, s\in S: \\ & D_{s}=A_{s}\cup\left(B_{s}-p(A_{s})\right)\cup\left(C_{s}-q(A_{s})\right)\\
+\textrm{\emph{(ii)} } & \forall \, s \in S\textrm{ and }c\in C_{s}: \\ &  p_{s}^{*}(c)=\begin{cases}
+a & c=q(a)\\
+c & \textrm{otherwise} 
+\end{cases}\\
+\textrm{\emph{(iii)} } &  \forall \, s\in S\textrm{ and }b\in B_{s}: \\ & q^{*}(b)=\begin{cases}
+a & b=q(a)\\
+b & \textrm{otherwise}
+\end{cases}\\
+\textrm{\emph{(iv)} } &  \forall \, f \in O_{w,v}:\\ & f^{D}(x)=\begin{cases}
+\left(p^{*}\right)^{v}(y_{C}) \, \, \, \, \, \,  \, \,  f^{C}(x_{C})=y_{C}\\
+\, \, \, \, \, \,  \, \, \, \, \, \, \, \,  \, \, \, \, \, \, \, \,  \, \, \, \, \,  \textrm{ and }f^{C}(x_{C})=y_{C}\\
+\left(q^{*}\right)^{v}(y_{B}) \, \, \, \, \, \,    \textrm{if }x=\left(q^{*}\right)^{w}(x_{B})\\
+\, \, \, \, \, \,  \, \, \, \, \, \, \, \,  \, \, \, \, \, \, \, \,  \, \, \, \, \, \textrm{ and }f^{B}(x_{B})=y_{B}\\
+\textrm{undefined} \, \, \, \, \, \,  \, \,  \textrm{otherwise}
+\end{cases}
+\end{align*}
+
+
+
+\columnbreak
+
+\textbf{\underline{Pullback}} 
+
+\textbf{\prop 151 Binäres Co-Produkt in \syssig} \\
+Das variante System $A + B$ ist das Co-Produkt der zwei Systeme $A$ und $B$.
+
+\end{multicols}
+
+
+
+\newpage
 
 \section{Varietät}
 
@@ -331,13 +500,15 @@ $a$ atomres Axiom, $I$ indizierte Menge. \\$(B_i \models a)_{i \in I} \implies \
 $a$ atomares Axiom, $i: C \rightarrowtail B$ extremaler Mono, $B \models a \implies C \models a$
 
 \paragraph{\defi 246: Homomorphe Bilder }
-Algebraisches System $C$ ist homomorphes Bild eines Systems $B$, wenn es einen subjektiven Homomorphismus $q: B \twoheadrightarrow C$ gibt.
+Algebraisches System $C$ ist homomorphes Bild eines Systems $B$, wenn es einen surjektiven Homomorphismus $q: B \twoheadrightarrow C$ gibt.
 
 \emph{(Notiz: Homomorphes Bild ist Spezialfall von Epi (Vgl. Prop 80) (Bedenke: Wenn surjektiv, dann Epi. Umgekehrt nicht)) }
 
 
 \paragraph{\prop 247: Gültigkeit in homomorphen Bildern}
 $B \models a$, $C$ homomorphes Bild von $B$, d.h. Es gibt einen surjektiven \homo $q: B \twoheadrightarrow C \implies C \models a$
+
+\emph{Notiz CT aus der Vorlesung: Wenn $C \models a$ und $h: B \rightarrowtail C$ injektiver Homo $\implies$: $B \models a$}
 
 \paragraph{\coro 248: Gültigkeit in Produktkomponenten}
 $a = (X,f)$ atomares Axiom und $S_X \subseteq S$ (Teilmenge der Sorten für welche $a$ Variablen hat), d.h. $s \in S_X \Leftrightarrow X_s \neq \emptyset$.
@@ -403,18 +574,82 @@ Eine einfache Lösung für das Spezifikationsproblem ist eine atomare Spezifikat
 \end{enumerate}
 
 
+\paragraph{\coro 261: Reflektion des initialen Objektes}
+$\mathcal{D}$ relflektive Subkategorie von $\mathcal{C}$, $\mathcal{C}$ hat initiales Objekt $\mathcal{I}$ $\implies$ Reflektion $\mathcal{I}_{\mathcal{D}}$ von $\mathcal{I}$ ist initial in $\mathcal{D}$
+
+\paragraph{\coro 262: Spezifizierbare Systeme}
+Eine Spezifikationsproblem $K \in Sys(\Sigma)$ vom Typ 1. (siehe Defi 259 1.) ist lösbar $\Leftrightarrow$ $K$ ist generiert durch seine Operationen, d.h. $K = \left\lceil i\left(\emptyset^{\Sigma}\right)\right\rceil ^{c}$, wobei $i: \emptyset^\Sigma \rightarrow K$ ist der eindeutige Homomorphismus vom initialen Objekt nach $K$.
+
+\section{Quasi Varietäten}
+
+\subsection{Horn-Typ Axiome}
+
+\paragraph{\defi 264: Hornaxiom}
+Hornaxiom $a = (X, P \subseteq F^{\Sigma,X}, c \in F^{\Sigma,X})$ \\
+$X$ ist endliche Variablenmenge, $P$ (Prämisse) endliche syntaktische Präsentation, $c \in F^{\Sigma,X}$ Formel (Konklusion).
+
+\paragraph{\defi 265: Gültigkeit von Hormaxiomen}
+Hormaxiom $a = (X, P, c)$ ist gültig in einem algebraischen System $B$ $(B \models a)$, wenn jeder Morphismus \\ $h: \mathbf{A}_P \nach B$ erweitert werden kann zu einem \homo \\ $h^*: \mathbf{A}_{c^P} \nach B$, so dass $h^* \circ x_{p}^c = h$, wobei $c^p = (X,P \cup \{c\})$ und $x^{c}_P: \mathbf{A}_P \nach \mathbf{A}_{c^P}$ ist der eindeutige \homo, der $x_P^c \circ x^P = x^{c^P}$ erfüllt.
+
+\paragraph{\prop 266: Gültigkeit ist abstrakt}
+$a = (X, P, c)$ Hornaxiom, $B \models a$, $B \approx B'$ $\implies$ $B' \models a$.
 
 
+\paragraph{\prop 267: Gültigkeit Produkt und Subsystem}
+$a = (X, P, c)$ Hornaxiom
+\begin{enumerate}
+\item $I$ Indexmenge, $(B_i \models a)_{i \in I}$ $\implies$ $\Pi (B_i)_{i \in I} \models a$
+\item $i: C \rightarrowtail B$ extremal Mono, $B \models a$ $\implies $ $C \models a$
+\end{enumerate}
+
+\paragraph{\lem 268: \homos in approximierte Systeme}
+$(I, \leq)$ gerichtete Indexmenge $\mathcal{H} = \left( (B^I)_{I \in I} (k^{i,j}: B^i \nach B^j)_{i,j \in I, i \leq j} \right)$ approximierte Situation \\ mit approximierende System 
+$\left(\mathcal{H}{}^{\bullet},\left(i^{\bullet}:B^{i}\rightarrow\mathcal{H}{}^{\bullet}\right)_{i\in I}\right)$,
+\\ $F=\left(X,F\subseteq F^{\Sigma,X}\right)$ endliche syntaktische Präsentation, \\
+ $m:\mathbf{A}_{F}\rightarrow\mathcal{H}{}^{\bullet}$ homo, \\
+$\implies$ es gibt $j\in I$ und ein Homo $m':\mathbf{A}_{F}\rightarrow B^{j}$, so dass  $m=j^{\bullet}\circ m'$.
 
 
+\paragraph{\prop 269: Gültigkeit in  approximierten Systeme}
+$(I, \leq)$ ist eine gerichtete, partiell geordnete Indexmenge und $\mathcal{H} = \left( (B^i)_{i \in I}, (k^{i,j}: B^i \nach B^j)_{i,j \in I, i \leq j} \right)$ eine approximierende Situation, so dass $(B^i \models a)_{i \in I}$ für ein Hornaxiom $a$ \\
+$\implies $ $a$ ist gültig im approximierten System $\mathcal{H}^\bullet$, d.h. $\mathcal{H}^\bullet \models a$
 
+\subsection{Horntyp Spezifikation}
 
+\paragraph{\defi 270: Horn-Spezifikation}
+Ein Horntyp-Spezifikation $HSpec = (\Sigma, \Phi)$ besteht aus einer Signatur $\Sigma$ und einer Menge an Hornaxiomen $\Phi$ wrt. to $\Sigma$. \\
+Algebraisches System $B \in Sys(\Sigma)$ erfüllt die Spezifikation $(B \models HSpec$  oder $B \models \Phi)$, wenn $B \models a$ für alle $a \in \Phi$.  \\
+Die volle Subkategorie von $Sys(\Sigma)$, welche alle Systeme beinhaltet, die die Spezifikation $HSpec = (\Sigma, \Phi)$ 
+erfüllen, wird bezeichnet als $Sys(HSpec)$ oder $Sys(\Phi)$. \\
+Eine volle Subkategorie $\mathbb{K}$ aller $\Sigma$-Systeme wird Hornklasse genannt, wenn es eine Hornspezifikation $HSpec = (\Sigma, \Phi)$ gibt, so dass $\mathbb{K} = Sys(HSpec)$.
 
+\paragraph{\prop 271: Hornklassen sind abstrakt}
+Jede Hornklasse ist isomorph-geschlossen.
 
+\paragraph{\defi 272: Bündel von Hornaxiomen, Lösung}
+Ein \emph{Bündel }$\mathcal{B}=\left(X,P\subseteq F^{\Sigma,X},C\subseteq F^{\Sigma,X}\right)$\emph{
+von Hormaxiomen} mit der gleichen endlichen Variablenmenge  $X$ \emph{und}
+der gleichen endlichen Menge  von prämissen $P$ besteht aus zwei syntaktischen Präsentationen
+$P$ und $C$. \\
+Die syntaktische Präsentation für Prämisse und Konklusion wird bezeichnet als $C^{P}=(X,P\cup C)$. \\
+Der eindeutige Epimorphismus, der $x_{P}^{C}\circ x^{P}=x^{C^{P}}$ erfüllt, wird bezeichnet als  $x_{P}^{C}:\mathbf{A}_{P}\rightarrow\mathbf{A}_{C^{P}}$. \\
+Ein algebraisches System $D$ erfüllt ein Bündel  ($D\models\mathcal{B}$),
+wenn jeder Homo $h:\mathbf{A}_{P}\rightarrow D$ erweitert werden kann
+zu einem Homo $h^{*}:\mathbf{A}_{C^{P}}\rightarrow C$, so dass
+$h^{*}\circ x_{P}^{C}=h$.
 
+\paragraph{\lem 273: Bündel definieren Co-Limiten}
+$\left(a_{i}=\left(X,P,c_{i}\right)\right)_{i\in I}$ ist eine Familie von Hornaxiomen, mit der selben Variablenmenge
+$X$ und der selben Menge von Prämissen $P$ und dessen Bündel $\mathcal{B}$ \\ 
+$\implies$  $\mathbf{A}_{\mathcal{B}}$
+ist Co-Limit von $\left(x^{c_{i}^{P}}:\mathbf{A}_{P}\rightarrow\mathbf{A}_{c_{i}^{P}}\right)_{i\in I}$
 
+\paragraph{\lem 274: Bündel von Hornaxiomen}
+Wenn $(a_i)_{i \in I}$ ist Familie von Hornaxiomen mit der gleichen Variablenmenge $X$ und der gleichen Menge von Prämissen, das heißt $a_i = (X, P, c_i)$ für alle $i \in I$ \\
+dann $\implies$ ein algebraisches System $D$ erfüllt alle Axiome, d.h. $(D \models a_i)_{i \in I}$ $\Leftrightarrow$ $D$ erfüllt das Bündel $\mathcal{B} = (X, P, \{c_i:: i \in I\})$, d.h. $D \models \mathcal{B}$
 
-
+\paragraph{Theorem 276: Charakterisierung von Hornklassen}
+Eine volle Subkategorie $\mathbb{K}$ von $Sys(\Sigma)$ ist eine Hornklasse $\Leftrightarrow$ $\mathbb{K}$ ist geschlossen bis auf Produkte, extremale Subobjekte und approximierte Systeme.
 
 
 
