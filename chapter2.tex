@@ -371,14 +371,14 @@ Weitere siehe Skript.
 \begin{figure}[h]
 \centering
 \subfigure[Pushout\label{fig:209}]{\includegraphics[width=0.22\textwidth]{Abbildungen/209}} \qquad \qquad \qquad
-\subfigure[Pullback\label{fig:todo}]{\includegraphics[width=0.22\textwidth]{Abbildungen/todo}}
+\subfigure[Pullback\label{fig:218}]{\includegraphics[width=0.22\textwidth]{Abbildungen/218}}
 \caption{Dekomposition}
 \end{figure}
 
 \begin{figure}[h]
 \centering
 \subfigure[Pushouts und Epis\label{fig:210}]{\includegraphics[width=0.22\textwidth]{Abbildungen/210}} \qquad \qquad \qquad
-\subfigure[Pullback\label{fig:todo}]{\includegraphics[width=0.22\textwidth]{Abbildungen/todo}}
+\subfigure[Pullback\label{fig:219}]{\includegraphics[width=0.22\textwidth]{Abbildungen/219}}
 \caption{Pushouts und Pullbacks}
 \end{figure}
 
@@ -411,14 +411,14 @@ Weitere siehe Skript.
 \begin{figure}[h]
 \centering
 \subfigure[Pushouts und extremal Epi\label{fig:211}]{\includegraphics[width=0.22\textwidth]{Abbildungen/211}} \qquad \qquad \qquad
-\subfigure[Pullback\label{fig:todo}]{\includegraphics[width=0.22\textwidth]{Abbildungen/todo}}
+\subfigure[Pullback\label{fig:220}]{\includegraphics[width=0.22\textwidth]{Abbildungen/220}}
 \caption{Pushouts und Pullbacks}
 \end{figure}
 
 \begin{figure}[h]
 \centering
 \subfigure[Pushouts und extremal Epi\label{fig:212}]{\includegraphics[width=0.22\textwidth]{Abbildungen/212}} \qquad \qquad \qquad
-\subfigure[Pullback\label{fig:todo}]{\includegraphics[width=0.22\textwidth]{Abbildungen/todo}}
+\subfigure[Pullback\label{221}]{\includegraphics[width=0.21\textwidth]{Abbildungen/221}}
 \caption{Pushouts und Pullbacks}
 \end{figure}
 \newpage 
@@ -585,29 +585,173 @@ $\mathcal{D}$ relflektive Subkategorie von $\mathcal{C}$, $\mathcal{C}$ hat init
 \paragraph{\coro 262: Spezifizierbare Systeme}
 Eine Spezifikationsproblem $K \in Sys(\Sigma)$ vom Typ 1. (siehe Defi 259 1.) ist lösbar $\Leftrightarrow$ $K$ ist generiert durch seine Operationen, d.h. $K = \left\lceil i\left(\emptyset^{\Sigma}\right)\right\rceil ^{c}$, wobei $i: \emptyset^\Sigma \rightarrow K$ ist der eindeutige Homomorphismus vom initialen Objekt nach $K$.
 
+
+
+\subsection{Construction of the Reflection}
+
+\paragraph{\defi 264: Substitution} Given a term $t\in T^{\Sigma,X}$
+and a variable assignment $h:X\rightarrow B$ in an algebraic system
+$B$, the \emph{substitution} $t/h\in T^{\Sigma,B}$ of $h$ in $t$
+is the term defined by: 
+\begin{enumerate}
+\item $t/h=h(t)$ if $t\in X$, 
+\item $t/h=f_{i}(x/h)$
+\item $t/h=f_{i}(x/h)$
+if $t=f_{i}(x)$, $f\in O_{w,v}$, $1\leq i\leq|w|$, and $x\in\left(T^{\Sigma,X}\right)^{w}$
+\item $\epsilon/h=\epsilon$, and
+\item $x/h=\left(x_{1}/h,x_{2}/h\right)$
+if $x=\left(x_{1},x_{2}\right)$, $x_{1}\in\left(T^{\Sigma,X}\right)^{w_{1}}$,
+$x_{2}\in\left(T^{\Sigma,X}\right)^{w_{2}}$, and $w_{1}w_{2}=w$.
+\end{enumerate}
+
+
+For a partial term system $P\subset T^{\Sigma,X}$ and variable assignment
+$h:X\rightarrow B$, $P/h\subseteq T^{\Sigma,B}$ is the partial term
+system given by the carriers $\left(P/h\right)_{s}=\{t/h\,::\, t\in P_{s}\}$
+for all $s\in S$.
+
+
+\paragraph{\defi 265 Partial-Term-System-Atomic-Axioms} If $B$ is an algebraic system and $\Phi$ a set of
+atomic $\Sigma$-axioms, then $P_{\Phi}(B)\subseteq T^{\Sigma,B}$
+is the smallest partial term system containing the following terms:
+(i)~$B_{s}\subseteq\left(P_{\Phi}(B)\right)_{s}$ for all sorts $s\in S$,
+(ii)~$t\in B_{s}$, if there is $\left(X,a\right)\in\Phi$, a term
+$t'\in a_{T}$ occurring in $a$ of sort $s$, and a variable assignment
+$h:X\rightarrow P_{\Phi}(B)$, such that $t=t'/h$%
+
+
+\paragraph{\lem 266: Partial-Term-System-Hom-Extension}If $m:B\rightarrow C$
+is a homomorphism, then there is a unique homomorphism $m^{\Phi}:P_{\Phi}(B)\rightarrow P_{\Phi}(C)$
+with $m^{\Phi}\,\circ\subseteq_{B}\,=\,\subseteq_{C}\!\circ\, m$
+where $\subseteq_{B}:B\rightarrow P_{\Phi}(B)$ and $\subseteq_{C}:C\rightarrow P_{\Phi}(C)$
+are the respective embeddings of the carriers into the term systems.
+The homomorphism $m^{\Phi}$ is defined by $P_{\Phi}(B)/m$.
+
+\paragraph{\lem 267: Satisfaction-and-AA-Partial-Term-System}If a system $B$
+satisfies a set of atomic axioms $\Phi$, i.\,e.~$B\models\Phi$,
+$P_{\Phi}(B)\subseteq P(\textrm{id}_{B})$.
+
+
+
+\paragraph{\defi 268: Self-Substitution} The \emph{self-substitution}
+$P/B$ of a set of terms $P\subseteq T^{\Sigma,B}$ with values in
+a system $B$ is the family $\left(P/B\right)_{s}=\left\{ t/B\,::\, t\in P_{s}\right\} $
+where $t/B$, the substitution of $t$ with values in $B$, is recursively
+defined by: (i)~$t/B=\textrm{id}_{B}^{*}(t)$ if $t\in P(\textrm{id}_{B})$,
+(ii)~$t/B=f_{i}(x/B)$ if $t=f_{i}(x)\notin P(\textrm{id}_{B})$,
+$f\in O_{w,v}$, $1\leq i\leq|w|$, and $x\in\left(T^{\Sigma,B}\right)^{w}$,
+(iii)~$\epsilon/B=\epsilon$, and (iv)~$x/B=\left(x_{1}/B,x_{2}/B\right)$
+if $x=\left(x_{1},x_{2}\right)$, $x_{1}\in\left(T^{\Sigma,B}\right)^{w_{1}}$,
+$x_{2}\in\left(T^{\Sigma,B}\right)^{w_{2}}$, and $w_{1}w_{2}=w$.
+
+
+
+
+\paragraph{\defi 269: Operation Closure for Atomic
+Axioms} Given a $\Sigma$-system $B$ and a set of atomic $\Sigma$-axioms
+$\Phi$, the \emph{operation closure} $B_{\mathsf{T_{\Phi}}}$ of
+$B$ is the following system: For all sorts $s\in S$, $\left(B_{\mathsf{T_{\Phi}}}\right)_{s}=\left(P_{\Phi}(B)/B\right)_{s}$.
+For all operations $f\in O_{w,v}$ with $v\neq\epsilon$, (i)~$f^{B_{\mathsf{T_{\Phi}}}}(x)=f^{B}(x)$,
+if $x\in B^{w}$ and $f^{B}$ is defined for $x$, (ii)~$f^{B_{\mathsf{T_{\Phi}}}}(x)=\left(f_{i}(x)\right)_{1\leq i\leq|v|}$,
+if $f_{i}(x)\in B_{\mathsf{T_{\Phi}}}$ for all $1\leq i\leq|v|$.
+For all operations $f\in O_{w,\epsilon}$ with $f\neq\,=$, $f^{B_{\mathsf{T_{\Phi}}}}(x)=f^{B}(x)$,
+if $x\in B^{w}$ and $f^{B}$ is defined for $x$.
+
+
+
+\paragraph{\prop 270: Embedding into Operation
+Closure} The embedding $i_{B}^{\Phi}:B\rightarrow B_{\mathsf{T_{\Phi}}}$
+defined by $i_{B}^{\Phi}(b)=b$ for all $b\in B$ \emph{(i)}~is a
+monomorphism, \emph{(ii)}~is an epimorphism, and satisfies \emph{(iii)}~$P_{\Phi}(B)\subseteq P\left(i_{B}^{\Phi}\right)$
+
+\paragraph{\lem 271 Pushout-of-Atomic-Axioms}The pair of homomorphisms $i_{B}^{\mathsf{T}}:P_{\Phi}(B)\rightarrow B_{\mathsf{T_{\Phi}}}$
+and $i_{B}^{\Phi}:B\rightarrow B_{\mathsf{T_{\Phi}}}$ is the pushout
+of the two variable assignments $\textrm{id}_{B}:B\rightarrow B$
+and $\subseteq_{B}:B\rightarrow P_{\Phi}(B)$.
+
+
+\paragraph{\lem Operation-Closure}If $B$ is a $\Sigma$-system, $\Phi$
+is a set of atomic $\Sigma$-axioms, $i_{B}^{\Phi}:B\rightarrow B_{\mathsf{T_{\Phi}}}$
+is the embedding of $B$ into its operation closure, $m:B\rightarrow D$
+is a homomorphism, and $D\models\Phi$, then there is a homomorphism
+$m^{*}:B_{\mathsf{T_{\Phi}}}\rightarrow D$ with $m^{*}\circ i_{B}^{\Phi}=m$.
+
+
+
+\paragraph{\defi 273: Predicate-Closure-for-Atomic}(Predicate Closure for Atomic
+Axioms) Given a $\Sigma$-system $B$, a set of atomic $\Sigma$-axioms
+$\Phi$, and the operation closure $B_{\mathsf{T_{\Phi}}}$, the predicate
+closure $B_{\mathsf{F_{\Phi}}}$ is an algebraic system with the same
+carriers and operations as $B_{\mathsf{T_{\Phi}}}$ and the following
+definition for predicates $p\in O_{w,\epsilon}$ and $p\neq\,=$~:~
+$p^{B_{\mathsf{F_{\Phi}}}}(x)$ is defined either (i)~if $p^{B_{\mathsf{}}}(x)$
+is defined or (ii)~there is an axiom $\left(Y,p(z)\right)\in\Phi$
+and a variable assignment $h:Y\rightarrow B_{\mathsf{T_{\Phi}}}$
+such that $\left(h^{*}\right)^{w}(z)=x$.
+
+
+\paragraph{\prop 274: Embedding into Predicate
+Closure} The embedding $j_{B}^{\Phi}:B_{\mathsf{T_{\Phi}}}\rightarrow B_{\mathsf{F_{\Phi}}}$
+defined by $j_{B}^{\Phi}(b)=b$ for all $b\in B_{\mathsf{T_{\Phi}}}$
+is a monomorphism and a surjective epimorphism.
+
+\paragraph{\lem 275:Predicate-Closure}If $B$ is a $\Sigma$-system, $\Phi$
+is a set of atomic $\Sigma$-axioms, $j_{B}^{\Phi}:B_{\mathsf{T_{\Phi}}}\rightarrow B_{\mathsf{F_{\Phi}}}$
+is the embedding into the predicate closure, $p:B_{\mathsf{T_{\Phi}}}\rightarrow D$
+is a homomorphism, and $D\models\Phi$, then there is a homomorphism
+$p^{*}:B_{\mathsf{F_{\Phi}}}\rightarrow D$ with $p^{*}\circ i_{B}^{\Phi}=p$.
+
+
+\paragraph{\defi 276: Construction-of-the-Atomic-Reflection}(Construction of the
+Reflection for Varieties) Given a $\Sigma$-system $B$, a set of
+atomic $\Sigma$-axioms $\Phi$, the operation closure $i_{B}^{\Phi}:B\rightarrow B_{\mathsf{T_{\Phi}}}$,
+and the predicate closure $j_{B}^{\Phi}:B_{\mathsf{T_{\Phi}}}\rightarrow B_{\mathsf{F_{\Phi}}}$,
+the reflection $\eta_{B}:B\rightarrow B_{\Phi}$ is defined as follows:
+(i)~$B_{\Phi}=\left(B_{\mathsf{F_{\Phi}}}\right)_{|\equiv^{\Phi}}$
+where $\equiv^{\Phi}$ is the smallest congruence containing $\sim^{\Phi}=\left\{ \left(h^{*}\left(t_{l}\right),h^{*}\left(t_{r}\right)\right)\,::\,\left(X,t_{l}=t_{r}\right)\in\Phi\textrm{ and assignment }h:X\rightarrow B_{\mathsf{F_{\Phi}}}\right\} $
+and (ii)~$\eta_{B}=\,\,\equiv_{B}^{\Phi}\circ\, j_{B}^{\Phi}\circ i_{B}^{\Phi}$
+where $\equiv_{B}^{\Phi}:B_{\mathsf{F_{\Phi}}}\rightarrow B_{\Phi}$
+is the natural (surjective) homomorphism%
+onto the quotient $\left(B_{\mathsf{F_{\Phi}}}\right)_{|\equiv^{\Phi}}=B_{\Phi}$.
+
+\paragraph{\lem 277:Reflection-Satisfaction}$B_{\Phi}\models\Phi$.
+
+\paragraph{\lem 278 : Equality-Closure}If $B$ is a $\Sigma$-system, $\Phi$
+is a set of atomic $\Sigma$-axioms, $\equiv_{B}^{\Phi}:B_{\mathsf{F_{\Phi}}}\rightarrow B_{\Phi}$
+is the natural homomorphism onto the quotient $B_{\Phi}$, $q:B_{\mathsf{F_{\Phi}}}\rightarrow D$
+is a homomorphism, and $D\models\Phi$, then there is a homomorphism
+$q^{*}:B_{\Phi}\rightarrow D$ with $q^{*}\circ\equiv_{B}^{\Phi}=q$.
+
+\paragraph{Theorem 279: 
+Construction of the Reflection for Varieties} The homomorphism $\eta_{B}:B\rightarrow B_{\Phi}$,
+constructed in Definition, is the reflector for $B$.
+
+
+
+
 \section{Quasi Varietäten}
 
 \subsection{Horn-Typ Axiome}
 
-\paragraph{\defi 264: Hornaxiom}
+\paragraph{\defi 280: Hornaxiom}
 Hornaxiom $a = (X, P \subseteq F^{\Sigma,X}, c \in F^{\Sigma,X})$ \\
 $X$ ist endliche Variablenmenge, $P$ (Prämisse) endliche syntaktische Präsentation, $c \in F^{\Sigma,X}$ Formel (Konklusion).
 
-\paragraph{\defi 265: Gültigkeit von Hormaxiomen}
+\paragraph{\defi 281: Gültigkeit von Hormaxiomen}
 Hormaxiom $a = (X, P, c)$ ist gültig in einem algebraischen System $B$ $(B \models a)$, wenn jeder Morphismus \\ $h: \mathbf{A}_P \nach B$ erweitert werden kann zu einem \homo \\ $h^*: \mathbf{A}_{c^P} \nach B$, so dass $h^* \circ x_{p}^c = h$, wobei $c^p = (X,P \cup \{c\})$ und $x^{c}_P: \mathbf{A}_P \nach \mathbf{A}_{c^P}$ ist der eindeutige \homo, der $x_P^c \circ x^P = x^{c^P}$ erfüllt.
 
-\paragraph{\prop 266: Gültigkeit ist abstrakt}
+\paragraph{\prop 282: Gültigkeit ist abstrakt}
 $a = (X, P, c)$ Hornaxiom, $B \models a$, $B \approx B'$ $\implies$ $B' \models a$.
 
 
-\paragraph{\prop 267: Gültigkeit Produkt und Subsystem}
+\paragraph{\prop 283: Gültigkeit Produkt und Subsystem}
 $a = (X, P, c)$ Hornaxiom
 \begin{enumerate}
 \item $I$ Indexmenge, $(B_i \models a)_{i \in I}$ $\implies$ $\Pi (B_i)_{i \in I} \models a$
 \item $i: C \rightarrowtail B$ extremal Mono, $B \models a$ $\implies $ $C \models a$
 \end{enumerate}
 
-\paragraph{\lem 268: \homos in approximierte Systeme}
+\paragraph{\lem 284: \homos in approximierte Systeme}
 $(I, \leq)$ gerichtete Indexmenge $\mathcal{H} = \left( (B^I)_{I \in I} (k^{i,j}: B^i \nach B^j)_{i,j \in I, i \leq j} \right)$ approximierte Situation \\ mit approximierende System 
 $\left(\mathcal{H}{}^{\bullet},\left(i^{\bullet}:B^{i}\rightarrow\mathcal{H}{}^{\bullet}\right)_{i\in I}\right)$,
 \\ $F=\left(X,F\subseteq F^{\Sigma,X}\right)$ endliche syntaktische Präsentation, \\
@@ -615,23 +759,23 @@ $\left(\mathcal{H}{}^{\bullet},\left(i^{\bullet}:B^{i}\rightarrow\mathcal{H}{}^{
 $\implies$ es gibt $j\in I$ und ein Homo $m':\mathbf{A}_{F}\rightarrow B^{j}$, so dass  $m=j^{\bullet}\circ m'$.
 
 
-\paragraph{\prop 269: Gültigkeit in  approximierten Systeme}
+\paragraph{\prop 285: Gültigkeit in  approximierten Systeme}
 $(I, \leq)$ ist eine gerichtete, partiell geordnete Indexmenge und $\mathcal{H} = \left( (B^i)_{i \in I}, (k^{i,j}: B^i \nach B^j)_{i,j \in I, i \leq j} \right)$ eine approximierende Situation, so dass $(B^i \models a)_{i \in I}$ für ein Hornaxiom $a$ \\
 $\implies $ $a$ ist gültig im approximierten System $\mathcal{H}^\bullet$, d.h. $\mathcal{H}^\bullet \models a$
 
 \subsection{Horntyp Spezifikation}
 
-\paragraph{\defi 270: Horn-Spezifikation}
+\paragraph{\defi 286: Horn-Spezifikation}
 Ein Horntyp-Spezifikation $HSpec = (\Sigma, \Phi)$ besteht aus einer Signatur $\Sigma$ und einer Menge an Hornaxiomen $\Phi$ wrt. to $\Sigma$. \\
 Algebraisches System $B \in Sys(\Sigma)$ erfüllt die Spezifikation $(B \models HSpec$  oder $B \models \Phi)$, wenn $B \models a$ für alle $a \in \Phi$.  \\
 Die volle Subkategorie von $Sys(\Sigma)$, welche alle Systeme beinhaltet, die die Spezifikation $HSpec = (\Sigma, \Phi)$ 
 erfüllen, wird bezeichnet als $Sys(HSpec)$ oder $Sys(\Phi)$. \\
 Eine volle Subkategorie $\mathbb{K}$ aller $\Sigma$-Systeme wird Hornklasse genannt, wenn es eine Hornspezifikation $HSpec = (\Sigma, \Phi)$ gibt, so dass $\mathbb{K} = Sys(HSpec)$.
 
-\paragraph{\prop 271: Hornklassen sind abstrakt}
+\paragraph{\prop 287: Hornklassen sind abstrakt}
 Jede Hornklasse ist isomorph-geschlossen.
 
-\paragraph{\defi 272: Bündel von Hornaxiomen, Lösung}
+\paragraph{\defi 288: Bündel von Hornaxiomen, Lösung}
 Ein \emph{Bündel }$\mathcal{B}=\left(X,P\subseteq F^{\Sigma,X},C\subseteq F^{\Sigma,X}\right)$\emph{
 von Hormaxiomen} mit der gleichen endlichen Variablenmenge  $X$ \emph{und}
 der gleichen endlichen Menge  von prämissen $P$ besteht aus zwei syntaktischen Präsentationen
@@ -643,17 +787,20 @@ wenn jeder Homo $h:\mathbf{A}_{P}\rightarrow D$ erweitert werden kann
 zu einem Homo $h^{*}:\mathbf{A}_{C^{P}}\rightarrow C$, so dass
 $h^{*}\circ x_{P}^{C}=h$.
 
-\paragraph{\lem 273: Bündel definieren Co-Limiten}
+\paragraph{\lem 289: Bündel definieren Co-Limiten}
 $\left(a_{i}=\left(X,P,c_{i}\right)\right)_{i\in I}$ ist eine Familie von Hornaxiomen, mit der selben Variablenmenge
 $X$ und der selben Menge von Prämissen $P$ und dessen Bündel $\mathcal{B}$ \\ 
 $\implies$  $\mathbf{A}_{\mathcal{B}}$
 ist Co-Limit von $\left(x^{c_{i}^{P}}:\mathbf{A}_{P}\rightarrow\mathbf{A}_{c_{i}^{P}}\right)_{i\in I}$
 
-\paragraph{\lem 274: Bündel von Hornaxiomen}
+\paragraph{\prop 290: Bündel von Hornaxiomen}
 Wenn $(a_i)_{i \in I}$ ist Familie von Hornaxiomen mit der gleichen Variablenmenge $X$ und der gleichen Menge von Prämissen, das heißt $a_i = (X, P, c_i)$ für alle $i \in I$ \\
 dann $\implies$ ein algebraisches System $D$ erfüllt alle Axiome, d.h. $(D \models a_i)_{i \in I}$ $\Leftrightarrow$ $D$ erfüllt das Bündel $\mathcal{B} = (X, P, \{c_i:: i \in I\})$, d.h. $D \models \mathcal{B}$
 
-\paragraph{Theorem 276: Charakterisierung von Hornklassen}
+\paragraph{\coro 291: Hornklassen sind episch reflektive Subkategorien}
+Jede Hornklasse $\mathbb{K} \subseteq Sys(\Sigma)$ ist eine episch reflektive Subkategorie von $Sys(\Sigma)$
+
+\paragraph{Theorem 292: Charakterisierung von Hornklassen}
 Eine volle Subkategorie $\mathbb{K}$ von $Sys(\Sigma)$ ist eine Hornklasse $\Leftrightarrow$ $\mathbb{K}$ ist geschlossen bis auf Produkte, extremale Subobjekte und approximierte Systeme.
 
 
